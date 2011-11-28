@@ -37,20 +37,20 @@
 		811CE7B214834A8800DAFE84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		811CE7B414834A8800DAFE84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		811CE7B614834A8800DAFE84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		811CE7BA14834A8800DAFE84 /* ATkeg-Info.plist */ = {isa = PBXFileReference; path = "ATkeg-Info.plist"; sourceTree = "<group>"; };
+		811CE7BA14834A8800DAFE84 /* ATkeg-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATkeg-Info.plist"; sourceTree = "<group>"; };
 		811CE7BC14834A8800DAFE84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		811CE7BE14834A8800DAFE84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		811CE7C014834A8800DAFE84 /* ATkeg-Prefix.pch */ = {isa = PBXFileReference; path = "ATkeg-Prefix.pch"; sourceTree = "<group>"; };
-		811CE7C114834A8800DAFE84 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		811CE7C014834A8800DAFE84 /* ATkeg-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ATkeg-Prefix.pch"; sourceTree = "<group>"; };
+		811CE7C114834A8800DAFE84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		811CE7C214834A8800DAFE84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		811CE7C514834A8800DAFE84 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		811CE7C714834A8800DAFE84 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		811CE7C714834A8800DAFE84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		811CE7C814834A8800DAFE84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		811CE7CF14834A8900DAFE84 /* ATkegTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATkegTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811CE7D014834A8900DAFE84 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		811CE7D814834A8900DAFE84 /* ATkegTests-Info.plist */ = {isa = PBXFileReference; path = "ATkegTests-Info.plist"; sourceTree = "<group>"; };
+		811CE7D814834A8900DAFE84 /* ATkegTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATkegTests-Info.plist"; sourceTree = "<group>"; };
 		811CE7DA14834A8900DAFE84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		811CE7DC14834A8900DAFE84 /* ATkegTests.h */ = {isa = PBXFileReference; path = ATkegTests.h; sourceTree = "<group>"; };
+		811CE7DC14834A8900DAFE84 /* ATkegTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATkegTests.h; sourceTree = "<group>"; };
 		811CE7DD14834A8900DAFE84 /* ATkegTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATkegTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
