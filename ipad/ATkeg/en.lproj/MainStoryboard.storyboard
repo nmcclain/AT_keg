@@ -30,9 +30,6 @@
                                 <rect key="frame" x="0.0" y="228" width="1024" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="nsl-6f-sg8" appends="YES" id="hBU-qX-Z4E"/>
-                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Keg 1" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="40X-z3-mFj">
                                 <rect key="frame" x="73" y="46" width="294" height="105"/>
@@ -110,31 +107,12 @@
                         <outlet property="navBar" destination="qWX-a8-3cj" id="5ZQ-Dt-9Yb"/>
                     </connections>
                 </viewController>
-                <swipeGestureRecognizer direction="down" id="nsl-6f-sg8">
-                    <connections>
-                        <action selector="swipeRight:" destination="2" id="Fw8-Wy-XP0"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
         </scene>
     </scenes>
     <resources>
         <image name="beer.jpg" width="1240" height="886"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshPushed:"/>
-                <relationship kind="action" name="swipeRight:"/>
-                <relationship kind="outlet" name="keg1pct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg1temp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2pct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2temp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>

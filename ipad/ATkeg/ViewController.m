@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)viewDidUnload
@@ -70,6 +71,7 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+
 - (IBAction)refreshPushed:(id)sender {
     [self doKegDataRefresh ];
 }
@@ -93,7 +95,7 @@
     } else {
         NSString       *kegdata =    [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     
-        kegdata = @"32,31.5,99.96,2.65,811"; // XXX remove this after debugging
+       // kegdata = @"32,31.5,99.96,2.65,811"; // XXX remove this after debugging
 
         //temp1,temp2,%remaining_left_side,%remaining_right_side,freemem_in_bits
         NSLog(@"kegdata: %@", kegdata);
@@ -129,8 +131,4 @@
 }
 
 
-- (IBAction)swipeRight:(id)sender {
-    NSLog(@"swipe de recha!");
-
-}
 @end

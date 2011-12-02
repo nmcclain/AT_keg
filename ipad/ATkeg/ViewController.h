@@ -20,6 +20,4 @@
 
 @property (nonatomic, retain) NSData *responseData;
 
-- (IBAction)swipeRight:(id)sender;
-
 @end
