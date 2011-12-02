@@ -21,7 +21,6 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Y2y-Df-c5I">
                                             <connections>
                                                 <action selector="refreshPushed:" destination="2" id="wMf-WD-BTT"/>
-                                                <segue destination="Aux-9k-p9K" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="YfS-fk-iKM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -99,47 +98,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="keg1pints" destination="tTI-WT-l80" id="36a-F8-9he"/>
+                        <outlet property="keg1temp" destination="RBH-kz-vCr" id="Djo-XI-QtS"/>
+                        <outlet property="navBar" destination="qWX-a8-3cj" id="5ZQ-Dt-9Yb"/>
+                    </connections>
                 </viewController>
             </objects>
-        </scene>
-        <scene sceneID="GZs-Oq-xQR">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UGM-Pl-y19" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Aux-9k-p9K" sceneMemberID="viewController">
-                    <view key="view" contentMode="center" id="HbJ-kF-KVl">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" minimumFontSize="10" id="uNX-CV-udx">
-                                <rect key="frame" x="77" y="28" width="229" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="200"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1253" y="-379"/>
         </scene>
     </scenes>
     <resources>
         <image name="beer.jpg" width="1240" height="886"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshPushed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>

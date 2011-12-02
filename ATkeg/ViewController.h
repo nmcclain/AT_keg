@@ -10,5 +10,11 @@
 
 @interface ViewController : UIViewController
 - (IBAction)refreshPushed:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *keg1temp;
+@property (weak, nonatomic) IBOutlet UILabel *keg1pints;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+
+@property (nonatomic, retain) NSData *responseData;
+
 
 @end

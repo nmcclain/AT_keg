@@ -9,6 +9,10 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize keg1temp;
+@synthesize keg1pints;
+@synthesize navBar;
+@synthesize  responseData;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +30,9 @@
 
 - (void)viewDidUnload
 {
+    [self setKeg1temp:nil];
+    [self setKeg1pints:nil];
+    [self setNavBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -58,7 +65,27 @@
 }
 
 - (IBAction)refreshPushed:(id)sender {
-    NSLog(@"Refresh: %@", sender);
+    NSLog(@"Refresh pushed!");
     
+    
+    self.navBar.topItem.title = @"Loading...";
+    
+    // fetch the data
+    NSError        *error = nil;
+    NSURLResponse  *response = nil;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://bull/kegbot/check.php"]];
+    self.responseData = [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: &error];
+    if (error) { NSLog(@"Handle this fetch error.");}
+    NSString       *kegdata =    [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    kegdata = @"32,32,99.96,2.65,811"; 
+    //temp1,temp2,%remaining_left_side,%remaining_right_side,freemem_in_bits
+    NSLog(@"kegdata: %@", kegdata);
+    
+    self.keg1temp.text = @"99 *F";
+    self.keg1pints.text = [NSMutableString stringWithFormat:@"%@ Pints", kegdata ]; 
+
+    self.navBar.topItem.title = @"AppliedTrust Keg Status";
+    NSLog(@"Refresh finished!");
 }
 @end
