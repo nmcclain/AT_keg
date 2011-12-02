@@ -1,0 +1,3 @@
+http://bull/kegbot/check.php
+32,32,99.96,2.65,811
+temp1,temp2,%remaining_left_side,%remaining_right_side,freemem_in_bits
