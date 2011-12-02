@@ -20,6 +20,7 @@
 		811CE7D314834A8900DAFE84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE7B414834A8800DAFE84 /* Foundation.framework */; };
 		811CE7DB14834A8900DAFE84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7D914834A8900DAFE84 /* InfoPlist.strings */; };
 		811CE7DE14834A8900DAFE84 /* ATkegTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7DD14834A8900DAFE84 /* ATkegTests.m */; };
+		811CE7E8148351A400DAFE84 /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7E7148351A400DAFE84 /* beer.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		811CE7DA14834A8900DAFE84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		811CE7DC14834A8900DAFE84 /* ATkegTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATkegTests.h; sourceTree = "<group>"; };
 		811CE7DD14834A8900DAFE84 /* ATkegTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATkegTests.m; sourceTree = "<group>"; };
+		811CE7E7148351A400DAFE84 /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		811CE7B814834A8800DAFE84 /* ATkeg */ = {
 			isa = PBXGroup;
 			children = (
+				811CE7E7148351A400DAFE84 /* beer.jpg */,
 				811CE7C114834A8800DAFE84 /* AppDelegate.h */,
 				811CE7C214834A8800DAFE84 /* AppDelegate.m */,
 				811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */,
@@ -223,6 +226,7 @@
 			files = (
 				811CE7BD14834A8800DAFE84 /* InfoPlist.strings in Resources */,
 				811CE7C614834A8800DAFE84 /* MainStoryboard.storyboard in Resources */,
+				811CE7E8148351A400DAFE84 /* beer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

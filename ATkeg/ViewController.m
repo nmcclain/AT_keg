@@ -54,7 +54,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+- (IBAction)refreshPushed:(id)sender {
+    NSLog(@"Refresh: %@", sender);
+    
+}
 @end
