@@ -29,6 +29,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="beer.jpg" id="kOS-sv-rpQ">
                                 <rect key="frame" x="0.0" y="228" width="1024" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nsl-6f-sg8" appends="YES" id="hBU-qX-Z4E"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Keg 1" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="40X-z3-mFj">
                                 <rect key="frame" x="73" y="46" width="294" height="105"/>
@@ -58,37 +62,37 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30 Pints" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
-                                <rect key="frame" x="128" y="499" width="289" height="71"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? %" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
+                                <rect key="frame" x="77" y="490" width="297" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="147"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="102 Pints" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CJt-zL-bnY">
-                                <rect key="frame" x="616" y="499" width="284" height="71"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="?%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CJt-zL-bnY">
+                                <rect key="frame" x="635" y="491" width="276" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="147"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="34 F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBH-kz-vCr">
-                                <rect key="frame" x="156" y="373" width="146" height="71"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBH-kz-vCr">
+                                <rect key="frame" x="108" y="330" width="234" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="82"/>
                                 <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="32 F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="itb-kw-lbs">
-                                <rect key="frame" x="709" y="373" width="146" height="71"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="itb-kw-lbs">
+                                <rect key="frame" x="661" y="330" width="234" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="82"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -99,17 +103,38 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
-                        <outlet property="keg1pints" destination="tTI-WT-l80" id="36a-F8-9he"/>
+                        <outlet property="keg1pct" destination="tTI-WT-l80" id="uFV-Xq-VBP"/>
                         <outlet property="keg1temp" destination="RBH-kz-vCr" id="Djo-XI-QtS"/>
+                        <outlet property="keg2pct" destination="CJt-zL-bnY" id="T7n-tK-xoj"/>
+                        <outlet property="keg2temp" destination="itb-kw-lbs" id="cVq-Fs-wvl"/>
                         <outlet property="navBar" destination="qWX-a8-3cj" id="5ZQ-Dt-9Yb"/>
                     </connections>
                 </viewController>
+                <swipeGestureRecognizer direction="down" id="nsl-6f-sg8">
+                    <connections>
+                        <action selector="swipeRight:" destination="2" id="Fw8-Wy-XP0"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
         </scene>
     </scenes>
     <resources>
         <image name="beer.jpg" width="1240" height="886"/>
     </resources>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshPushed:"/>
+                <relationship kind="action" name="swipeRight:"/>
+                <relationship kind="outlet" name="keg1pct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg1temp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg2pct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg2temp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
