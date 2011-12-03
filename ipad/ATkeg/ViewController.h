@@ -12,8 +12,10 @@
 - (IBAction)refreshPushed:(id)sender;
 - (void)doKegDataRefresh;
 
+@property (weak, nonatomic) IBOutlet UILabel *keg1name;
 @property (weak, nonatomic) IBOutlet UILabel *keg1temp;
 @property (weak, nonatomic) IBOutlet UILabel *keg1pct;
+@property (weak, nonatomic) IBOutlet UILabel *keg2name;
 @property (weak, nonatomic) IBOutlet UILabel *keg2temp;
 @property (weak, nonatomic) IBOutlet UILabel *keg2pct;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;

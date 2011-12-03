@@ -9,8 +9,10 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize keg1name;
 @synthesize keg1temp;
 @synthesize keg1pct;
+@synthesize keg2name;
 @synthesize keg2temp;
 @synthesize keg2pct;
 @synthesize navBar;
@@ -38,6 +40,8 @@
     [self setNavBar:nil];
     [self setKeg2temp:nil];
     [self setKeg2pct:nil];
+    [self setKeg1name:nil];
+    [self setKeg2name:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -80,7 +84,7 @@
 {
 	// configurables
     NSString       *kegbotURL = @"http://localhost/check.php";
-    NSString       *wikiURL = @"http://localhost/wiki.html";
+    NSString       *wikiURL = @"http://camelspit.org/keg_wikipage_sample.html";
     
     //
     NSLog(@"Refresh started...");
@@ -92,36 +96,43 @@
     NSURLResponse  *response = nil;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:wikiURL]];
     self.responseData = [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: &urlerror];
-    urlerror = nil; // XXX remove this after debugging
     if (urlerror) { 
-        NSLog(@"Handle this fetch error.");
         self.navBar.topItem.title = @"Error Fetching Keg Status";
-        NSLog(@"Refresh failed!");
+        NSLog(@"Refresh from wiki failed!");
         
     } else {
         NSString       *kegdata =    [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+        NSLog(@"got the wiki page! %@", kegdata);
         
-        NSLog(@"kegdata from wiki: %@", kegdata);
+        NSError *matchError = nil;
+        // match the table we care about
+        NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"Currently on Tap(.*)</table>" options:NSRegularExpressionDotMatchesLineSeparators error:&matchError];
+        NSString *kegOnTapTable = @"";
+        NSRange rangeOfFirstMatch = [regex rangeOfFirstMatchInString:kegdata options:0 range:NSMakeRange(0, [kegdata length])];
+        if (NSEqualRanges(rangeOfFirstMatch, NSMakeRange(NSNotFound, 0))) {
+            NSLog(@"error matching the kegOnTapTable in the keg wiki page! %@", kegdata);
+
+        } else {
+            kegOnTapTable = [kegdata substringWithRange:rangeOfFirstMatch];
+            NSLog(@"got the kegOnTapTable! %@", kegOnTapTable);
+            
+        }
         
-        //NSLog(@"kegdata: %@", kegdata);
-        //temp1,temp2,%remaining_left_side,%remaining_right_side,freemem_in_bits    
-        //NSArray* kegdataparts = [kegdata componentsSeparatedByString: @","];
-        
+        // match the stuff inside
         /*
-         NSRegularExpression *regex = [NSRegularExpression 
-         regularExpressionWithPattern:@"^...."
-         options:0
-         error:&error];
-         
-         NSRange range   = [regex rangeOfFirstMatchInString:kegdata options:0 range:NSMakeRange(0, [kegdata length])];
-         NSString *output = [kegdata substringWithRange:range];
-         NSLog(@"parse result: %@", output);
-         */
+        regex = [[NSRegularExpression alloc] initWithPattern:@"Currently on Tap(.*)</table><hr />" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSString *kegOnTapTable = @"";
+        NSRange rangeOfFirstMatch = [regex rangeOfFirstMatchInString:kegdata options:0 range:NSMakeRange(0, [kegdata length])];
+        if (!NSEqualRanges(rangeOfFirstMatch, NSMakeRange(NSNotFound, 0))) {
+            kegOnTapTable = [kegdata substringWithRange:rangeOfFirstMatch];
+        }*/
         
         
-        NSLog(@"got the wiki data!");
+        NSLog(@"got the wiki data! %@", kegOnTapTable);
     }
     
+    /*
     NSLog(@"Fetching arduino data...");
 
     // fetch the data
@@ -131,9 +142,8 @@
     self.responseData = [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: &urlerror];
     urlerror = nil; // XXX remove this after debugging
     if (urlerror) { 
-        NSLog(@"Handle this fetch error.");
         self.navBar.topItem.title = @"Error Fetching Keg Status";
-        NSLog(@"Refresh failed!");
+        NSLog(@"Refresh from arduino failed!");
 
     } else {
         NSString       *kegdata =    [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
@@ -149,9 +159,14 @@
         self.keg2temp.text = [NSMutableString stringWithFormat:@"%@ \u00B0F", [kegdataparts objectAtIndex: 1] ]; 
         self.keg2pct.text = [NSMutableString stringWithFormat:@"%@ %%", [kegdataparts objectAtIndex: 3] ]; 
 
-        self.navBar.topItem.title = @"AppliedTrust Keg Status";
-        NSLog(@"Refresh finished!");
+        NSLog(@"got the arduino data!");
+
     }
+     
+     */
+    self.navBar.topItem.title = @"AppliedTrust Keg Status";
+    NSLog(@"Refresh finished!");
+    
 }
 
 @end
