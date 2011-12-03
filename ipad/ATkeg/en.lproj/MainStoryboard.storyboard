@@ -77,7 +77,7 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBH-kz-vCr">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? °F" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBH-kz-vCr">
                                 <rect key="frame" x="108" y="330" width="234" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="82"/>
@@ -86,7 +86,7 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? F*" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="itb-kw-lbs">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="? °F" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="itb-kw-lbs">
                                 <rect key="frame" x="661" y="330" width="234" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="82"/>
@@ -113,6 +113,19 @@
     <resources>
         <image name="beer.jpg" width="1240" height="886"/>
     </resources>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshPushed:"/>
+                <relationship kind="outlet" name="keg1pct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg1temp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg2pct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keg2temp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
