@@ -84,7 +84,7 @@
 {
 	// configurables
     NSString       *kegbotURL = @"http://localhost/check.php";
-    NSString       *wikiURL = @"http://camelspit.org/keg_wikipage_sample.html";
+    NSString       *wikiURL = @"http://localhost/keg_wikipage_sample.html";
     
     //
     NSLog(@"Refresh started...");
@@ -102,34 +102,35 @@
         
     } else {
         NSString       *kegdata =    [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    
-        NSLog(@"got the wiki page! %@", kegdata);
-        
         NSError *matchError = nil;
+
         // match the table we care about
         NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"Currently on Tap(.*)</table>" options:NSRegularExpressionDotMatchesLineSeparators error:&matchError];
         NSString *kegOnTapTable = @"";
         NSRange rangeOfFirstMatch = [regex rangeOfFirstMatchInString:kegdata options:0 range:NSMakeRange(0, [kegdata length])];
-        if (NSEqualRanges(rangeOfFirstMatch, NSMakeRange(NSNotFound, 0))) {
+        if (NSEqualRanges(rangeOfFirstMatch, NSMakeRange(NSNotFound, 0)) || matchError) {
             NSLog(@"error matching the kegOnTapTable in the keg wiki page! %@", kegdata);
-
         } else {
             kegOnTapTable = [kegdata substringWithRange:rangeOfFirstMatch];
-            NSLog(@"got the kegOnTapTable! %@", kegOnTapTable);
-            
+            //NSLog(@"got the kegOnTapTable! %@", kegOnTapTable);
         }
         
         // match the stuff inside
-        /*
-        regex = [[NSRegularExpression alloc] initWithPattern:@"Currently on Tap(.*)</table><hr />" options:NSRegularExpressionCaseInsensitive error:nil];
-        NSString *kegOnTapTable = @"";
-        NSRange rangeOfFirstMatch = [regex rangeOfFirstMatchInString:kegdata options:0 range:NSMakeRange(0, [kegdata length])];
-        if (!NSEqualRanges(rangeOfFirstMatch, NSMakeRange(NSNotFound, 0))) {
-            kegOnTapTable = [kegdata substringWithRange:rangeOfFirstMatch];
-        }*/
+        //<tr ><td  align='center'>Samuel Adams Winter Lager (BOCK 5.50% ABV)</td><td  align='center'>Homebrew Schwarz Weizen (Black Wheat) (6% ABV)</td></tr>
+        //<tr ><td  align='center'><a class='urllink' href='http://www.samueladams.com/enjoy-our-beer/beer-detail.aspx?id=a6f2e74f-a650-4bae-aa93-1dfbeb5593e4' rel='nofollow'>http://www.samueladams.com/enjoy-our-beer/beer-detail.aspx?id=a6f2e74f-a650-4bae-aa93-1dfbeb5593e4</a></td><td  align='center'>Wheat and Black Malt</td></tr>
+
         
+        regex = [[NSRegularExpression alloc] initWithPattern:@"<tr ><td  align='center'>(.*)</td>" options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+        NSString *keg1desc = @"";
+//        NSString *keg2desc = @"";
+        NSArray *matches = [regex matchesInString:kegOnTapTable options:0 range:NSMakeRange(0, [kegOnTapTable length])];        
         
-        NSLog(@"got the wiki data! %@", kegOnTapTable);
+        for (NSTextCheckingResult *match in matches) {
+            keg1desc = [kegOnTapTable substringWithRange:match.range];
+            NSLog(@"got keg1 desc! %@", keg1desc);
+        }
+         
+        NSLog(@"got the wiki data!");
     }
     
     /*
