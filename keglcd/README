@@ -1,0 +1,11 @@
+Simple LCD keg status display including temperature, tap date, beer type/%abs, and soon pressure.
+
+Includes working Teensyduino (Arduino clone http://www.pjrc.com/teensy/) code and laser cutout files for case.
+
+To build this for Teensyduino, you need to install:
+	* The Arduino environment: http://www.arduino.cc/
+	* The Teensyduino addon for the Arduino IDE: http://www.pjrc.com/teensy/td_download.html
+	* The KS0108 Graphics LCD library: http://www.pjrc.com/teensy/td_libs_GLCD.html (see also: http://www.arduino.cc/playground/Code/GLCDks0108 )
+
+
+
