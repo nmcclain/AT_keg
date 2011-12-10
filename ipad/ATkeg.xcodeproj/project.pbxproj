@@ -21,6 +21,9 @@
 		811CE7DB14834A8900DAFE84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7D914834A8900DAFE84 /* InfoPlist.strings */; };
 		811CE7DE14834A8900DAFE84 /* ATkegTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7DD14834A8900DAFE84 /* ATkegTests.m */; };
 		811CE7E8148351A400DAFE84 /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7E7148351A400DAFE84 /* beer.jpg */; };
+		81261A5D1493D0310025C443 /* beer_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A5C1493D0310025C443 /* beer_icon.png */; };
+		81261A631493D1BD0025C443 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */; };
+		81261A641493D1C30025C443 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A611493D1100025C443 /* Default-Portrait~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		811CE7DC14834A8900DAFE84 /* ATkegTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATkegTests.h; sourceTree = "<group>"; };
 		811CE7DD14834A8900DAFE84 /* ATkegTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATkegTests.m; sourceTree = "<group>"; };
 		811CE7E7148351A400DAFE84 /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
+		81261A5C1493D0310025C443 /* beer_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer_icon.png; sourceTree = "<group>"; };
+		81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		81261A611493D1100025C443 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 		811CE7A314834A8800DAFE84 = {
 			isa = PBXGroup;
 			children = (
+				81261A611493D1100025C443 /* Default-Portrait~ipad.png */,
+				81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */,
+				81261A5C1493D0310025C443 /* beer_icon.png */,
 				811CE7B814834A8800DAFE84 /* ATkeg */,
 				811CE7D614834A8900DAFE84 /* ATkegTests */,
 				811CE7B114834A8800DAFE84 /* Frameworks */,
@@ -227,6 +236,9 @@
 				811CE7BD14834A8800DAFE84 /* InfoPlist.strings in Resources */,
 				811CE7C614834A8800DAFE84 /* MainStoryboard.storyboard in Resources */,
 				811CE7E8148351A400DAFE84 /* beer.jpg in Resources */,
+				81261A5D1493D0310025C443 /* beer_icon.png in Resources */,
+				81261A631493D1BD0025C443 /* Default-Landscape~ipad.png in Resources */,
+				81261A641493D1C30025C443 /* Default-Portrait~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
