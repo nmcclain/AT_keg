@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *keg2temp;
 @property (weak, nonatomic) IBOutlet UILabel *keg2pct;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (weak, nonatomic) IBOutlet UILabel *keg1desc;
+@property (weak, nonatomic) IBOutlet UILabel *keg2desc;
 
 @property (nonatomic, retain) NSData *responseData;
 

@@ -21,7 +21,6 @@
 		811CE7DB14834A8900DAFE84 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7D914834A8900DAFE84 /* InfoPlist.strings */; };
 		811CE7DE14834A8900DAFE84 /* ATkegTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7DD14834A8900DAFE84 /* ATkegTests.m */; };
 		811CE7E8148351A400DAFE84 /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7E7148351A400DAFE84 /* beer.jpg */; };
-		81F937111492D7B900ABB0A5 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F937101492D7B900ABB0A5 /* XPathQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +54,6 @@
 		811CE7DC14834A8900DAFE84 /* ATkegTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATkegTests.h; sourceTree = "<group>"; };
 		811CE7DD14834A8900DAFE84 /* ATkegTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATkegTests.m; sourceTree = "<group>"; };
 		811CE7E7148351A400DAFE84 /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beer.jpg; path = ../beer.jpg; sourceTree = "<group>"; };
-		81F9370F1492D7B900ABB0A5 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		81F937101492D7B900ABB0A5 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +119,6 @@
 				811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */,
 				811CE7C714834A8800DAFE84 /* ViewController.h */,
 				811CE7C814834A8800DAFE84 /* ViewController.m */,
-				81F9370F1492D7B900ABB0A5 /* XPathQuery.h */,
-				81F937101492D7B900ABB0A5 /* XPathQuery.m */,
 				811CE7B914834A8800DAFE84 /* Supporting Files */,
 			);
 			path = ATkeg;
@@ -269,7 +264,6 @@
 				811CE7BF14834A8800DAFE84 /* main.m in Sources */,
 				811CE7C314834A8800DAFE84 /* AppDelegate.m in Sources */,
 				811CE7C914834A8800DAFE84 /* ViewController.m in Sources */,
-				81F937111492D7B900ABB0A5 /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
