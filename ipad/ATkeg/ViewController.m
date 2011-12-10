@@ -32,7 +32,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    [self doKegDataRefresh ];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
+}
+
+-(void)refreshView:(NSNotification *) notification {
+    [self doKegDataRefresh ];
+
 }
 
 - (void)viewDidUnload
@@ -53,7 +60,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self doKegDataRefresh ];
 
     [super viewWillAppear:animated];
 }
@@ -92,12 +98,11 @@
     NSString       *kegbotURL = @"http://camelspit.org/keg_data_sample.html";
     NSString       *wikiURL = @"http://camelspit.org/keg_wikidata.php";
     
-    //
-    NSLog(@"Refresh started...");
+    // NSLog(@"Refresh started...");
     self.navBar.topItem.title = @"Loading...";
     
     // first, the data from our wiki
-    NSLog(@"Fetching wiki page..."); //wikiURL
+    // NSLog(@"Fetching wiki page..."); //wikiURL
     NSError* urlerror = nil;
     
     NSString* kegdata = [NSString stringWithContentsOfURL:[NSURL URLWithString:wikiURL] encoding:NSASCIIStringEncoding error:&urlerror];
@@ -112,11 +117,10 @@
     self.keg1desc.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 2] ]; 
     self.keg2name.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 1] ]; 
     self.keg2desc.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 3] ]; 
-    NSLog(@"got the wiki data!");
+    // NSLog(@"got the wiki data!");
     
-    NSLog(@"Fetching arduino data...");
+    // NSLog(@"Fetching arduino data...");
     // fetch the data
-   
     kegdata = [NSString stringWithContentsOfURL:[NSURL URLWithString:kegbotURL] encoding:NSASCIIStringEncoding error:&urlerror];
     if(!kegdata )    {
         //NSLog(@"error fetching the keg wiki page!");
@@ -129,10 +133,10 @@
     self.keg1pct.text = [NSMutableString stringWithFormat:@"%@ %%", [kegdataparts objectAtIndex: 2] ]; 
     self.keg2temp.text = [NSMutableString stringWithFormat:@"%@ \u00B0F", [kegdataparts objectAtIndex: 1] ]; 
     self.keg2pct.text = [NSMutableString stringWithFormat:@"%@ %%", [kegdataparts objectAtIndex: 3] ]; 
-    NSLog(@"got the arduino data!");
+    // NSLog(@"got the arduino data!");
     
     self.navBar.topItem.title = @"AppliedTrust Keg Status";
-    NSLog(@"Refresh finished!");
+    // NSLog(@"Refresh finished!");
 
 }
 
