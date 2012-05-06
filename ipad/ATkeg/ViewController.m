@@ -95,8 +95,8 @@
 - (void)doKegDataRefresh
 {
 	// configurables
-    NSString       *kegbotURL = @"http://camelspit.org/keg_data_sample.html";
-    NSString       *wikiURL = @"http://camelspit.org/keg_wikidata.php";
+    NSString       *kegbotURL = @"http://bull.atrust.com/kegbot/check.php";
+    NSString       *wikiURL = @"http://bajafur.atrust.com/keg_wikidata.php";
     
     // NSLog(@"Refresh started...");
     self.navBar.topItem.title = @"Loading...";
