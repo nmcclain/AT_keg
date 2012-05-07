@@ -37,7 +37,7 @@
 		816EC63015573FAF00802A32 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC61F15573FAF00802A32 /* SBJsonUTF8Stream.m */; };
 		816EC63115573FAF00802A32 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC62115573FAF00802A32 /* SBJsonWriter.m */; };
 		816EC63215573FAF00802A32 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 816EC62315573FAF00802A32 /* README.md */; };
-		816EC63315573FAF00802A32 /* SMWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC62515573FAF00802A32 /* SMWebRequest.m */; };
+		816EC63315573FAF00802A32 /* SMWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC62515573FAF00802A32 /* SMWebRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		81A7C92215570D2600CCBA85 /* Local_Texture__Three_by_One_by_Beyond_Oddities.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92115570D2600CCBA85 /* Local_Texture__Three_by_One_by_Beyond_Oddities.jpg */; };
 		81A7C92715570E0D00CCBA85 /* keg.png in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92615570E0D00CCBA85 /* keg.png */; };
 		81A7C92A15570EF900CCBA85 /* dalespaleale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92815570EF900CCBA85 /* dalespaleale.jpg */; };

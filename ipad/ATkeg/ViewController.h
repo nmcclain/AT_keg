@@ -13,17 +13,24 @@
 - (IBAction)refreshPushed:(id)sender;
 - (void)doKegDataRefresh;
 
-@property (weak, nonatomic) IBOutlet UILabel *keg1name;
-@property (weak, nonatomic) IBOutlet UILabel *keg1temp;
-@property (weak, nonatomic) IBOutlet UILabel *keg1pct;
-@property (weak, nonatomic) IBOutlet UILabel *keg2name;
-@property (weak, nonatomic) IBOutlet UILabel *keg2temp;
-@property (weak, nonatomic) IBOutlet UILabel *keg2pct;
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
-@property (weak, nonatomic) IBOutlet UILabel *keg1desc;
-@property (weak, nonatomic) IBOutlet UILabel *keg2desc;
 
 @property (nonatomic, retain) SMWebRequest *kegWebRequest;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegName;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegType;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegABV;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegBrewer;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegDesc;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegPct;
+@property (weak, nonatomic) IBOutlet UILabel *leftKegTemp;
 
+@property (weak, nonatomic) IBOutlet UILabel *rightKegName;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegType;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegABV;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegBrewer;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegDesc;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegPct;
+@property (weak, nonatomic) IBOutlet UILabel *rightKegTemp;
 
 @end

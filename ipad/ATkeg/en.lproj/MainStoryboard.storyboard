@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -28,11 +27,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="beer.jpg" id="kOS-sv-rpQ">
-                                <rect key="frame" x="0.0" y="228" width="1024" height="520"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Local_Texture__Three_by_One_by_Beyond_Oddities.jpg" id="H0i-h3-LEU">
                                 <rect key="frame" x="0.0" y="43" width="1024" height="705"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,14 +51,14 @@
                                 <rect key="frame" x="509" y="54" width="519" height="437"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="English Pale Ale" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="f6m-Ya-wGG">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Right Keg" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="f6m-Ya-wGG">
                                 <rect key="frame" x="512" y="93" width="499" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.37755102040816324" green="0.15691352340268769" blue="0.0309871906354766" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dale's Pale Ale" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="QjP-rP-xPL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Left Keg" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="QjP-rP-xPL">
                                 <rect key="frame" x="-97" y="79" width="669" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
@@ -115,60 +109,58 @@
                                 <rect key="frame" x="742" y="487" width="45" height="179"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type: Pale Ale" lineBreakMode="tailTruncation" minimumFontSize="10" id="BN8-Fq-1Cg">
-                                <rect key="frame" x="37" y="180" width="322" height="32"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type: " lineBreakMode="tailTruncation" minimumFontSize="10" id="BN8-Fq-1Cg">
+                                <rect key="frame" x="37" y="180" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ABV: 6.5%" lineBreakMode="tailTruncation" minimumFontSize="10" id="4wf-uz-7R8">
-                                <rect key="frame" x="37" y="223" width="322" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ABV: " lineBreakMode="tailTruncation" minimumFontSize="10" id="4wf-uz-7R8">
+                                <rect key="frame" x="37" y="224" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brewer: Oskar Blues" lineBreakMode="tailTruncation" minimumFontSize="10" id="QGP-T1-DR6">
-                                <rect key="frame" x="37" y="269" width="322" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brewer: " lineBreakMode="tailTruncation" minimumFontSize="10" id="QGP-T1-DR6">
+                                <rect key="frame" x="37" y="267" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" id="UsB-s5-2PL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Left keg description..." lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" id="UsB-s5-2PL">
                                 <rect key="frame" x="37" y="308" width="400" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">America’s first hand-canned craft beer is a voluminously hopped mutha that delivers a hoppy nose, assertive-but-balanced flavors of pale malts and hops from start to finish.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type: Pale Ale" lineBreakMode="tailTruncation" minimumFontSize="10" id="dUi-7G-oTx">
-                                <rect key="frame" x="566" y="184" width="322" height="32"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type:" lineBreakMode="tailTruncation" minimumFontSize="10" id="dUi-7G-oTx">
+                                <rect key="frame" x="566" y="180" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ABV: ~7%" lineBreakMode="tailTruncation" minimumFontSize="10" id="v3Q-f0-Sl2">
-                                <rect key="frame" x="566" y="228" width="322" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ABV: " lineBreakMode="tailTruncation" minimumFontSize="10" id="v3Q-f0-Sl2">
+                                <rect key="frame" x="566" y="224" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brewer: Jeff Wright" lineBreakMode="tailTruncation" minimumFontSize="10" id="8xO-sV-V5n">
-                                <rect key="frame" x="566" y="275" width="416" height="34"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brewer: " lineBreakMode="tailTruncation" minimumFontSize="10" id="8xO-sV-V5n">
+                                <rect key="frame" x="566" y="267" width="416" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" id="ZNR-xq-kCH">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Right keg description..." lineBreakMode="tailTruncation" numberOfLines="5" minimumFontSize="10" id="ZNR-xq-kCH">
                                 <rect key="frame" x="566" y="306" width="388" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Jeff makes a fine beer!  Jeff makes a fine beer!  Jeff makes a fine beer!  Jeff makes a fine beer!  Jeff makes a fine beer!  Jeff makes a fine beer!  </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.37755102039999999" green="0.1569135234" blue="0.030987190639999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -178,12 +170,21 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <connections>
-                        <outlet property="keg1desc" destination="QjP-rP-xPL" id="3tY-E4-mbk"/>
-                        <outlet property="keg1pct" destination="tTI-WT-l80" id="uFV-Xq-VBP"/>
-                        <outlet property="keg1temp" destination="RBH-kz-vCr" id="Djo-XI-QtS"/>
-                        <outlet property="keg2desc" destination="f6m-Ya-wGG" id="Spu-eh-Jb0"/>
-                        <outlet property="keg2temp" destination="itb-kw-lbs" id="cVq-Fs-wvl"/>
+                        <outlet property="leftKegABV" destination="4wf-uz-7R8" id="Vxd-pL-tz2"/>
+                        <outlet property="leftKegBrewer" destination="QGP-T1-DR6" id="K2P-pP-Fpr"/>
+                        <outlet property="leftKegDesc" destination="UsB-s5-2PL" id="fEp-f4-8u5"/>
+                        <outlet property="leftKegName" destination="QjP-rP-xPL" id="Q4R-AA-gtp"/>
+                        <outlet property="leftKegPct" destination="tTI-WT-l80" id="nkC-34-NCQ"/>
+                        <outlet property="leftKegTemp" destination="RBH-kz-vCr" id="czv-Hl-Jti"/>
+                        <outlet property="leftKegType" destination="BN8-Fq-1Cg" id="q1b-Wg-Uy5"/>
                         <outlet property="navBar" destination="qWX-a8-3cj" id="5ZQ-Dt-9Yb"/>
+                        <outlet property="rightKegABV" destination="v3Q-f0-Sl2" id="WNA-9G-5v7"/>
+                        <outlet property="rightKegBrewer" destination="8xO-sV-V5n" id="MGm-OM-Dfz"/>
+                        <outlet property="rightKegDesc" destination="ZNR-xq-kCH" id="msT-Ki-69V"/>
+                        <outlet property="rightKegName" destination="f6m-Ya-wGG" id="7my-En-udt"/>
+                        <outlet property="rightKegPct" destination="Z7d-lS-Khd" id="wA7-5K-88V"/>
+                        <outlet property="rightKegTemp" destination="itb-kw-lbs" id="z2b-8W-eZ4"/>
+                        <outlet property="rightKegType" destination="dUi-7G-oTx" id="gVi-Cg-W0r"/>
                     </connections>
                 </viewController>
             </objects>
@@ -191,13 +192,35 @@
     </scenes>
     <resources>
         <image name="Local_Texture__Three_by_One_by_Beyond_Oddities.jpg" width="1944" height="1296"/>
-        <image name="beer.jpg" width="1240" height="886"/>
         <image name="dalespaleale.jpg" width="475" height="734"/>
         <image name="keg.png" width="700" height="1064"/>
         <image name="note_paper.gif" width="469" height="481"/>
         <image name="tbr-london-pride.jpg" width="475" height="743"/>
         <image name="thermometer.jpg" width="108" height="386"/>
     </resources>
+    <classes>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshPushed:"/>
+                <relationship kind="outlet" name="leftKegABV" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegBrewer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegDesc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegPct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegTemp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftKegType" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="rightKegABV" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegBrewer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegDesc" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegPct" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegTemp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="rightKegType" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>

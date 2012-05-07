@@ -11,16 +11,22 @@
 #import "SBJson.h"
 
 @implementation ViewController
-@synthesize keg1name;
-@synthesize keg1temp;
-@synthesize keg1pct;
-@synthesize keg2name;
-@synthesize keg2temp;
-@synthesize keg2pct;
 @synthesize navBar;
-@synthesize keg1desc;
-@synthesize keg2desc;
 @synthesize kegWebRequest;
+@synthesize leftKegName;
+@synthesize leftKegType;
+@synthesize leftKegABV;
+@synthesize leftKegBrewer;
+@synthesize leftKegDesc;
+@synthesize leftKegPct;
+@synthesize leftKegTemp;
+@synthesize rightKegName;
+@synthesize rightKegType;
+@synthesize rightKegABV;
+@synthesize rightKegBrewer;
+@synthesize rightKegDesc;
+@synthesize rightKegPct;
+@synthesize rightKegTemp;
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,15 +55,21 @@
 
 - (void)viewDidUnload
 {
-    [self setKeg1temp:nil];
-    [self setKeg1pct:nil];
     [self setNavBar:nil];
-    [self setKeg2temp:nil];
-    [self setKeg2pct:nil];
-    [self setKeg1name:nil];
-    [self setKeg2name:nil];
-    [self setKeg1desc:nil];
-    [self setKeg2desc:nil];
+    [self setLeftKegName:nil];
+    [self setLeftKegType:nil];
+    [self setLeftKegABV:nil];
+    [self setLeftKegBrewer:nil];
+    [self setLeftKegDesc:nil];
+    [self setLeftKegPct:nil];
+    [self setLeftKegTemp:nil];
+    [self setRightKegName:nil];
+    [self setRightKegType:nil];
+    [self setRightKegABV:nil];
+    [self setRightKegBrewer:nil];
+    [self setRightKegDesc:nil];
+    [self setRightKegPct:nil];
+    [self setRightKegTemp:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -68,7 +80,7 @@
 
     [super viewWillAppear:animated];
     
-    [UIScreen mainScreen].brightness = 0.5;
+    //[UIScreen mainScreen].brightness = 0.5;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -97,6 +109,18 @@
     [self doKegDataRefresh ];
 }
 
+- (void)doKegDataRefresh
+{
+	// configurables
+    NSString       *kegdataURL = @"http://bajafur.atrust.com/atkeg/atkeg_data.php";
+    
+    // NSLog(@"Refresh started...");
+    self.navBar.topItem.title = @"Loading...";
+    
+    self.kegWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:kegdataURL]];
+    [kegWebRequest addTarget:self action:@selector(kegWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
+    [kegWebRequest start];
+}
 
 - (void)kegWebRequestComplete:(NSData *)responseData {
     if(!responseData )    {
@@ -106,6 +130,22 @@
         self.navBar.topItem.title = @"Error fetching Keg Status";
         return;
     }
+    NSDictionary *jsonResponse = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding] JSONValue];
+    self.leftKegName.text = [[jsonResponse objectForKey:@"left"] objectForKey:@"name"];
+    self.rightKegName.text = [[jsonResponse objectForKey:@"right"] objectForKey:@"name"];
+    self.leftKegDesc.text = [[jsonResponse objectForKey:@"left"] objectForKey:@"description"];
+    self.rightKegDesc.text = [[jsonResponse objectForKey:@"right"] objectForKey:@"description"];
+    self.leftKegType.text = [NSString stringWithFormat:@"Type: %@", [[jsonResponse objectForKey:@"left"] objectForKey:@"type"]];
+    self.rightKegType.text = [NSString stringWithFormat:@"Type: %@", [[jsonResponse objectForKey:@"right"] objectForKey:@"type"]];
+    self.leftKegABV.text = [NSString stringWithFormat:@"ABV: %@", [[jsonResponse objectForKey:@"left"] objectForKey:@"abv"]];
+    self.rightKegABV.text = [NSString stringWithFormat:@"ABV: %@", [[jsonResponse objectForKey:@"right"] objectForKey:@"abv"]];
+    self.leftKegBrewer.text = [NSString stringWithFormat:@"Brewer: %@", [[jsonResponse objectForKey:@"left"] objectForKey:@"brewer"]];
+    self.rightKegBrewer.text = [NSString stringWithFormat:@"Brewer: %@", [[jsonResponse objectForKey:@"right"] objectForKey:@"brewer"]];
+    self.leftKegPct.text = [NSString stringWithFormat:@"%@%%", [[jsonResponse objectForKey:@"left"] objectForKey:@"pctremaining"]];
+    self.rightKegPct.text = [NSString stringWithFormat:@"%@%%", [[jsonResponse objectForKey:@"right"] objectForKey:@"pctremaining"]];
+    self.leftKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"left"] objectForKey:@"tempF"]];
+    self.rightKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"right"] objectForKey:@"tempF"]];
+    
     
     // [UIScreen mainScreen].brightness = 0.5;
     
@@ -118,24 +158,6 @@
     self.navBar.topItem.title = @"On Tap @ AppliedTrust - Monday, May 6, 2012";
     
     return;
-}
-
-
-- (void)doKegDataRefresh
-{
-	// configurables
-    NSString       *kegbotURL = @"http://bull.atrust.com/kegbot/check.php";
-    NSString       *wikiURL = @"http://bajafur.atrust.com/keg_wikidata.php";
-    
-    // NSLog(@"Refresh started...");
-    self.navBar.topItem.title = @"Loading...";
-    
-    self.kegWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.camelspit.org/atguest/api/?seallist"]]];
-    [kegWebRequest addTarget:self action:@selector(kegWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
-    [kegWebRequest start];
-    
-    
-    
 }
 
 @end
