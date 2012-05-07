@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SMWebRequest.h"
+#import "SBJson.h"
 
 @implementation ViewController
 @synthesize keg1name;
@@ -18,7 +20,7 @@
 @synthesize navBar;
 @synthesize keg1desc;
 @synthesize keg2desc;
-@synthesize responseData;
+@synthesize kegWebRequest;
 
 - (void)didReceiveMemoryWarning
 {
@@ -33,8 +35,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self doKegDataRefresh ];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(webRequestError:) name:kSMWebRequestError object:nil];
+
+
 }
 
 -(void)refreshView:(NSNotification *) notification {
@@ -62,6 +67,8 @@
 {
 
     [super viewWillAppear:animated];
+    
+    [UIScreen mainScreen].brightness = 0.5;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,6 +98,28 @@
 }
 
 
+- (void)kegWebRequestComplete:(NSData *)responseData {
+    if(!responseData )    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error fetching keg data." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertView show];
+        
+        self.navBar.topItem.title = @"Error fetching Keg Status";
+        return;
+    }
+    
+    // [UIScreen mainScreen].brightness = 0.5;
+    
+    NSString *MyString;
+	NSDate *now = [NSDate date];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
+	MyString = [dateFormatter stringFromDate:now];
+    
+    self.navBar.topItem.title = @"On Tap @ AppliedTrust - Monday, May 6, 2012";
+    
+    return;
+}
+
 
 - (void)doKegDataRefresh
 {
@@ -101,43 +130,12 @@
     // NSLog(@"Refresh started...");
     self.navBar.topItem.title = @"Loading...";
     
-    // first, the data from our wiki
-    // NSLog(@"Fetching wiki page..."); //wikiURL
-    NSError* urlerror = nil;
+    self.kegWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.camelspit.org/atguest/api/?seallist"]]];
+    [kegWebRequest addTarget:self action:@selector(kegWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
+    [kegWebRequest start];
     
-    NSString* kegdata = [NSString stringWithContentsOfURL:[NSURL URLWithString:wikiURL] encoding:NSASCIIStringEncoding error:&urlerror];
-    if(!kegdata )    {
-        //NSLog(@"error fetching the keg wiki page!");
-        self.navBar.topItem.title = @"error fetching the keg wiki page!";
-        return; 
-    }
-
-    NSArray* kegdataparts = [kegdata componentsSeparatedByString: @","];
-    self.keg1name.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 0] ]; 
-    self.keg1desc.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 2] ]; 
-    self.keg2name.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 1] ]; 
-    self.keg2desc.text = [NSMutableString stringWithFormat:@"%@", [kegdataparts objectAtIndex: 3] ]; 
-    // NSLog(@"got the wiki data!");
     
-    // NSLog(@"Fetching arduino data...");
-    // fetch the data
-    kegdata = [NSString stringWithContentsOfURL:[NSURL URLWithString:kegbotURL] encoding:NSASCIIStringEncoding error:&urlerror];
-    if(!kegdata )    {
-        //NSLog(@"error fetching the keg wiki page!");
-        self.navBar.topItem.title = @"error fetching the keg arduino data!";
-        return; 
-    }
-    //temp1,temp2,%remaining_left_side,%remaining_right_side,freemem_in_bits    
-    kegdataparts = [kegdata componentsSeparatedByString: @","];
-    self.keg1temp.text = [NSMutableString stringWithFormat:@"%@ \u00B0F", [kegdataparts objectAtIndex: 0] ]; 
-    self.keg1pct.text = [NSMutableString stringWithFormat:@"%@ %%", [kegdataparts objectAtIndex: 2] ]; 
-    self.keg2temp.text = [NSMutableString stringWithFormat:@"%@ \u00B0F", [kegdataparts objectAtIndex: 1] ]; 
-    self.keg2pct.text = [NSMutableString stringWithFormat:@"%@ %%", [kegdataparts objectAtIndex: 3] ]; 
-    // NSLog(@"got the arduino data!");
     
-    self.navBar.topItem.title = @"AppliedTrust Keg Status";
-    // NSLog(@"Refresh finished!");
-
 }
 
 @end

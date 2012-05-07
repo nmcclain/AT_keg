@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -39,8 +41,8 @@
                                 <rect key="frame" x="27" y="475" width="206" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="78%" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
-                                <rect key="frame" x="72" y="521" width="162" height="145"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="78%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
+                                <rect key="frame" x="32" y="521" width="201" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,8 +103,8 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=".1%" lineBreakMode="tailTruncation" minimumFontSize="10" id="Z7d-lS-Khd">
-                                <rect key="frame" x="835" y="521" width="162" height="145"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=".1%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Z7d-lS-Khd">
+                                <rect key="frame" x="797" y="521" width="197" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,23 +198,6 @@
         <image name="tbr-london-pride.jpg" width="475" height="743"/>
         <image name="thermometer.jpg" width="108" height="386"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshPushed:"/>
-                <relationship kind="outlet" name="keg1desc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg1name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg1pct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg1temp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2desc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2pct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keg2temp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
