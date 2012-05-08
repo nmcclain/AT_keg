@@ -14,7 +14,51 @@ echo(json_encode($d))."\n";
 exit(0);
 
 #####################
+function findvals($arr, $str) {
+  foreach ($arr as $line) {
+    if (preg_match("/\|\|\s*".$str."\s*\|\|\s*(.*)\s*\|\|\s*(.*)\s*\|\|/", $line, $matches)) {
+      return array($matches[1], $matches[2]);
+    }
+  }
+  return array(null, null);
+}
+
+#####################
 function fetch_wikidata() {
+  // fetch the kegorator wiki page
+  $url = "http://wiki.atrust.com/wiki.d/LocalCustoms.MyATEKegerator";
+  $content = `wget -q -O - $url | egrep "^text="`;
+  $out = array();
+
+  $lines = split('%0a', $content); 
+
+  // find the keg data
+  list($k1name,$k2name) = findvals($lines, "Name");
+  list($k1desc,$k2desc) = findvals($lines, "Description");
+  list($k1brewer,$k2brewer) = findvals($lines, "Brewer");
+  list($k1abv,$k2abv) = findvals($lines, "ABV");
+  list($k1type,$k2type) = findvals($lines, "Type");
+
+  $out['left'] = array(
+    'name' => $k1name,
+    'brewer' => $k1brewer,
+    'description' => $k1desc,
+    'abv' => $k1abv,
+    'type' => $k1type,
+  );
+  $out['right'] = array(
+    'name' => $k2name,
+    'brewer' => $k2brewer,
+    'description' => $k2desc,
+    'abv' => $k2abv,
+    'type' => $k2type,
+  );
+  return $out;
+}
+
+
+#####################
+function fetch_wikidata_old() {
   // fetch the kegorator wiki page
   $url = "http://wiki.atrust.com/index.php?n=LocalCustoms.MyATEKegerator";
   $content = `wget -q -O - $url`;
@@ -95,12 +139,12 @@ function fetch_arduinodata() {
   $parts = preg_split('/,/', $content);
 
   $out['left'] = array(
-    'tempF' => $parts[0],
-    'pctremaining' => $parts[2],
+    'tempF' => sprintf( "%.1f", $parts[0]),
+    'pctremaining' => sprintf( "%.0f", $parts[2]),
   );
   $out['right'] = array(
-    'tempF' => $parts[1],
-    'pctremaining' => $parts[3],
+    'tempF' => sprintf( "%.1f", $parts[1]),
+    'pctremaining' => sprintf( "%.0f", $parts[3]),
   );
   return $out;
 }
