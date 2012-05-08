@@ -15,14 +15,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(doTimerRefresh:) userInfo:nil repeats:YES];
+    
     
     return YES;
 }
 
--(void) doTimerRefresh: (NSTimer *) timer {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshView" object:nil];
-}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

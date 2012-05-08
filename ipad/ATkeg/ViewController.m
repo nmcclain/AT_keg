@@ -45,12 +45,20 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(webRequestError:) name:kSMWebRequestError object:nil];
 
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
+    
+    
 
 }
 
 -(void)refreshView:(NSNotification *) notification {
     [self doKegDataRefresh ];
-
+    
+}
+-(void)refreshLocalView:(NSNotification *) notification {
+    [self doLocalRefresh ];
+    
 }
 
 - (void)viewDidUnload
@@ -112,10 +120,11 @@
 - (void)doKegDataRefresh
 {
 	// configurables
-    NSString       *kegdataURL = @"http://bajafur.atrust.com/atkeg/atkeg_data.php";
+    //NSString       *kegdataURL = @"http://bajafur.atrust.com/atkeg/atkeg_data.php";
+    NSString       *kegdataURL = @"http://www.camelspit.org/atkeg";
     
     // NSLog(@"Refresh started...");
-    self.navBar.topItem.title = @"Loading...";
+    //self.navBar.topItem.title = @"Loading...";
     
     self.kegWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:kegdataURL]];
     [kegWebRequest addTarget:self action:@selector(kegWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
@@ -145,17 +154,22 @@
     self.rightKegPct.text = [NSString stringWithFormat:@"%@%%", [[jsonResponse objectForKey:@"right"] objectForKey:@"pctremaining"]];
     self.leftKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"left"] objectForKey:@"tempF"]];
     self.rightKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"right"] objectForKey:@"tempF"]];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
     
-    
+    return;
+}
+
+- (void)doLocalRefresh
+{
     // [UIScreen mainScreen].brightness = 0.5;
     
-    NSString *MyString;
 	NSDate *now = [NSDate date];
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"yyyy-MM-dd-HH-mm-ss"];
-	MyString = [dateFormatter stringFromDate:now];
+	[dateFormatter setDateFormat:@"MMM dd, yyyy - h:mm:ss a"];
     
-    self.navBar.topItem.title = @"On Tap @ AppliedTrust - Monday, May 6, 2012";
+    self.navBar.topItem.title = [NSString stringWithFormat:@"On Tap @ AppliedTrust - %@", [dateFormatter stringFromDate:now] ];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
     
     return;
 }

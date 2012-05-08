@@ -10,8 +10,8 @@
 #import "SMWebRequest.h"
 
 @interface ViewController : UIViewController
-- (IBAction)refreshPushed:(id)sender;
 - (void)doKegDataRefresh;
+- (void)doLocalRefresh;
 
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
