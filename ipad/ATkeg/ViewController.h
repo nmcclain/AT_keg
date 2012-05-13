@@ -14,6 +14,7 @@
 - (void)doLocalRefresh;
 
 
+@property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @property (nonatomic, retain) SMWebRequest *kegWebRequest;

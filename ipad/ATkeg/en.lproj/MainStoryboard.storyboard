@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
@@ -171,6 +170,7 @@
                         <outlet property="leftKegPct" destination="tTI-WT-l80" id="nkC-34-NCQ"/>
                         <outlet property="leftKegTemp" destination="RBH-kz-vCr" id="czv-Hl-Jti"/>
                         <outlet property="leftKegType" destination="BN8-Fq-1Cg" id="q1b-Wg-Uy5"/>
+                        <outlet property="mainView" destination="5" id="EGl-7V-goW"/>
                         <outlet property="navBar" destination="qWX-a8-3cj" id="5ZQ-Dt-9Yb"/>
                         <outlet property="rightKegABV" destination="v3Q-f0-Sl2" id="WNA-9G-5v7"/>
                         <outlet property="rightKegBrewer" destination="8xO-sV-V5n" id="MGm-OM-Dfz"/>
@@ -192,29 +192,6 @@
         <image name="tbr-london-pride.jpg" width="475" height="743"/>
         <image name="thermometer.jpg" width="108" height="386"/>
     </resources>
-    <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshPushed:"/>
-                <relationship kind="outlet" name="leftKegABV" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegBrewer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegDesc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegPct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegTemp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftKegType" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="rightKegABV" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegBrewer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegDesc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegPct" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegTemp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightKegType" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>

@@ -9,13 +9,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ATkeg/ViewController.m"
-         timestampString = "358135498.849831"
+         timestampString = "358563976.467837"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
-         landmarkType = "5">
+         startingLineNumber = "134"
+         endingLineNumber = "134"
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

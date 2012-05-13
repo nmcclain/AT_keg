@@ -11,6 +11,7 @@
 #import "SBJson.h"
 
 @implementation ViewController
+@synthesize mainView;
 @synthesize navBar;
 @synthesize kegWebRequest;
 @synthesize leftKegName;
@@ -27,6 +28,10 @@
 @synthesize rightKegDesc;
 @synthesize rightKegPct;
 @synthesize rightKegTemp;
+
+NSDate *lasttouch;
+ * const SleepTime = @"FirstConstant";
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,11 +50,31 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"refreshView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(webRequestError:) name:kSMWebRequestError object:nil];
 
+    lasttouch = [NSDate date];
+    
+    UITapGestureRecognizer *tapRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+    [tapRecognizer setNumberOfTapsRequired:1];
+    [tapRecognizer setNumberOfTouchesRequired:1];
+    [[self view] addGestureRecognizer:tapRecognizer];
+    
+    UISwipeGestureRecognizer *oneFingerSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+    [oneFingerSwipe setDirection: UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp];
+    [[self view] addGestureRecognizer:oneFingerSwipe];
+
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
     
-    
+}
 
+- (void)tapDetected:(UITapGestureRecognizer *)recognizer
+{
+    lasttouch = [NSDate date];
+}
+- (void)swipeDetected:(UISwipeGestureRecognizer *)recognizer
+{
+    lasttouch = [NSDate date];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SWIPEPEE!" message:@"SWIPEPEE." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [alertView show];
 }
 
 -(void)refreshView:(NSNotification *) notification {
@@ -78,6 +103,7 @@
     [self setRightKegDesc:nil];
     [self setRightKegPct:nil];
     [self setRightKegTemp:nil];
+    [self setMainView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -88,7 +114,7 @@
 
     [super viewWillAppear:animated];
     
-    //[UIScreen mainScreen].brightness = 0.5;
+    [UIScreen mainScreen].brightness = 1;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -161,9 +187,16 @@
 
 - (void)doLocalRefresh
 {
-    // [UIScreen mainScreen].brightness = 0.5;
     
 	NSDate *now = [NSDate date];
+    NSTimeInterval theinterval = [now timeIntervalSinceDate:lasttouch];
+    if ((theinterval > 5) && ([UIScreen mainScreen].brightness == 1)){
+        [UIScreen mainScreen].brightness = 0.1;
+        NSLog(@"dimmed the screen!");
+    } else if ((theinterval < 5) && ([UIScreen mainScreen].brightness < 1)){
+        [UIScreen mainScreen].brightness = 1;
+        NSLog(@"UNdimmed the screen!");
+    }
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"MMM dd, yyyy - h:mm:ss a"];
     
