@@ -21,6 +21,7 @@
 @synthesize leftKegDesc;
 @synthesize leftKegPct;
 @synthesize leftKegTemp;
+@synthesize leftKegImage;
 @synthesize rightKegName;
 @synthesize rightKegType;
 @synthesize rightKegABV;
@@ -30,8 +31,7 @@
 @synthesize rightKegTemp;
 
 NSDate *lasttouch;
- * const SleepTime = @"FirstConstant";
-
+int const ScreenDimSeconds = 3; //00;
 
 - (void)didReceiveMemoryWarning
 {
@@ -52,20 +52,35 @@ NSDate *lasttouch;
 
     lasttouch = [NSDate date];
     
-    UITapGestureRecognizer *tapRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
+    /*
+     UITapGestureRecognizer *tapRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected:)];
     [tapRecognizer setNumberOfTapsRequired:1];
     [tapRecognizer setNumberOfTouchesRequired:1];
     [[self view] addGestureRecognizer:tapRecognizer];
+     */
     
-    UISwipeGestureRecognizer *oneFingerSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
-    [oneFingerSwipe setDirection: UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight | UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp];
-    [[self view] addGestureRecognizer:oneFingerSwipe];
+    UISwipeGestureRecognizer *oneFingerSwipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+    [oneFingerSwipeRight setDirection: UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:oneFingerSwipeRight];
+    UISwipeGestureRecognizer *oneFingerSwipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+    [oneFingerSwipeLeft setDirection: UISwipeGestureRecognizerDirectionLeft];
+    [[self view] addGestureRecognizer:oneFingerSwipeLeft];
+    UISwipeGestureRecognizer *oneFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+    [oneFingerSwipeUp setDirection: UISwipeGestureRecognizerDirectionUp];
+    [[self view] addGestureRecognizer:oneFingerSwipeUp];
+    UISwipeGestureRecognizer *oneFingerSwipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
+    [oneFingerSwipeDown setDirection: UISwipeGestureRecognizerDirectionDown];
+    [[self view] addGestureRecognizer:oneFingerSwipeDown];
+    
+    UITapGestureRecognizer *adminSwipeGestureRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adminSwipeDetected)];
+    [adminSwipeGestureRecognizer setNumberOfTapsRequired:3];
+    [adminSwipeGestureRecognizer setNumberOfTouchesRequired:3];
+    [[self view] addGestureRecognizer:adminSwipeGestureRecognizer];
 
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
     
 }
-
 - (void)tapDetected:(UITapGestureRecognizer *)recognizer
 {
     lasttouch = [NSDate date];
@@ -73,7 +88,10 @@ NSDate *lasttouch;
 - (void)swipeDetected:(UISwipeGestureRecognizer *)recognizer
 {
     lasttouch = [NSDate date];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SWIPEPEE!" message:@"SWIPEPEE." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+}
+- (void)adminSwipeDetected:(UISwipeGestureRecognizer *)recognizer
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"JO!" message:@"JO....." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [alertView show];
 }
 
@@ -104,6 +122,8 @@ NSDate *lasttouch;
     [self setRightKegPct:nil];
     [self setRightKegTemp:nil];
     [self setMainView:nil];
+    [self setLeftKegImage:nil];
+    [self setLeftKegImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -114,7 +134,7 @@ NSDate *lasttouch;
 
     [super viewWillAppear:animated];
     
-    [UIScreen mainScreen].brightness = 1;
+    lasttouch = [NSDate date];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -125,6 +145,8 @@ NSDate *lasttouch;
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    [UIScreen mainScreen].brightness = 1;
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -190,21 +212,27 @@ NSDate *lasttouch;
     
 	NSDate *now = [NSDate date];
     NSTimeInterval theinterval = [now timeIntervalSinceDate:lasttouch];
-    if ((theinterval > 5) && ([UIScreen mainScreen].brightness == 1)){
+    if ((theinterval >= ScreenDimSeconds) && ([UIScreen mainScreen].brightness == 1)){
         [UIScreen mainScreen].brightness = 0.1;
-        NSLog(@"dimmed the screen!");
-    } else if ((theinterval < 5) && ([UIScreen mainScreen].brightness < 1)){
+        //NSLog(@"dimmed the screen!");
+    } else if ((theinterval < ScreenDimSeconds) && ([UIScreen mainScreen].brightness < 1)){
         [UIScreen mainScreen].brightness = 1;
-        NSLog(@"UNdimmed the screen!");
+        //NSLog(@"UNdimmed the screen!");
     }
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"MMM dd, yyyy - h:mm:ss a"];
+	[dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy"];
     
     self.navBar.topItem.title = [NSString stringWithFormat:@"On Tap @ AppliedTrust - %@", [dateFormatter stringFromDate:now] ];
-    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
     
     return;
 }
 
+- (IBAction)leftKegImageClicked:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"POW!" message:@"POW....." delegate:self cancelButtonTitle:@"INDEED!!" otherButtonTitles:nil];
+    [alertView show];
+}
+- (IBAction)backgroundClicked:(id)sender {
+    lasttouch = [NSDate date];
+}
 @end

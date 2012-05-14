@@ -16,8 +16,12 @@
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+- (IBAction)backgroundClicked:(id)sender;
 
 @property (nonatomic, retain) SMWebRequest *kegWebRequest;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *leftKegName;
 @property (weak, nonatomic) IBOutlet UILabel *leftKegType;
 @property (weak, nonatomic) IBOutlet UILabel *leftKegABV;
@@ -25,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *leftKegDesc;
 @property (weak, nonatomic) IBOutlet UILabel *leftKegPct;
 @property (weak, nonatomic) IBOutlet UILabel *leftKegTemp;
+@property (weak, nonatomic) IBOutlet UIButton *leftKegImage;
+- (IBAction)leftKegImageClicked:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *rightKegName;
 @property (weak, nonatomic) IBOutlet UILabel *rightKegType;
