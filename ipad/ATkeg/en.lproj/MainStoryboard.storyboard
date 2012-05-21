@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="4">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,18 +26,6 @@
                                 <rect key="frame" x="0.0" y="43" width="1024" height="705"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="keg.png" id="AbF-za-aLE">
-                                <rect key="frame" x="27" y="475" width="206" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="78%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
-                                <rect key="frame" x="32" y="521" width="201" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="note_paper.gif" id="nvS-Ss-8XD">
                                 <rect key="frame" x="8" y="44" width="506" height="437"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,16 +34,8 @@
                                 <rect key="frame" x="517" y="54" width="511" height="437"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="thermometer.jpg" id="yvU-4c-9h7">
-                                <rect key="frame" x="241" y="487" width="45" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="keg.png" id="NbZ-sr-sWq">
-                                <rect key="frame" x="791" y="475" width="206" height="253"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="35°F" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBH-kz-vCr">
-                                <rect key="frame" x="146" y="634" width="234" height="114"/>
+                                <rect key="frame" x="206" y="684" width="139" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,25 +43,13 @@
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="35°F" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="itb-kw-lbs">
-                                <rect key="frame" x="646" y="634" width="234" height="114"/>
+                                <rect key="frame" x="680" y="684" width="138" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=".1%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Z7d-lS-Khd">
-                                <rect key="frame" x="797" y="521" width="197" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="2" height="2"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="thermometer.jpg" id="tPi-Yo-iH4">
-                                <rect key="frame" x="742" y="487" width="45" height="179"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type: " lineBreakMode="tailTruncation" minimumFontSize="10" id="BN8-Fq-1Cg">
                                 <rect key="frame" x="37" y="187" width="322" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -167,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M6c-hG-nd2">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                <rect key="frame" x="-35" y="-14" width="1024" height="748"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -181,6 +149,30 @@
                                     <action selector="backgroundClicked:" destination="2" eventType="touchUpInside" id="tsJ-1c-bIh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="keg.png" id="AbF-za-aLE">
+                                <rect key="frame" x="27" y="475" width="206" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="keg.png" id="NbZ-sr-sWq">
+                                <rect key="frame" x="791" y="475" width="206" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="78%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="tTI-WT-l80">
+                                <rect key="frame" x="32" y="521" width="201" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=".1%" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Z7d-lS-Khd">
+                                <rect key="frame" x="797" y="521" width="197" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="74"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jte-yw-QTL">
                                 <rect key="frame" x="343" y="184" width="111" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,6 +200,40 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b77-7y-vre">
+                                <rect key="frame" x="241" y="489" width="68" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="thermometer.jpg">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="KbX-g1-qje" kind="popover" popoverAnchorView="b77-7y-vre" id="deM-uM-7l5">
+                                        <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YYg-Zd-lHY">
+                                <rect key="frame" x="715" y="489" width="68" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="thermometer.jpg">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VbH-F1-jht" kind="popover" popoverAnchorView="YYg-Zd-lHY" id="33h-9o-Xlf">
+                                        <popoverArrowDirection key="popoverArrowDirection" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -231,9 +257,100 @@
                         <outlet property="rightKegPct" destination="Z7d-lS-Khd" id="wA7-5K-88V"/>
                         <outlet property="rightKegTemp" destination="itb-kw-lbs" id="z2b-8W-eZ4"/>
                         <outlet property="rightKegType" destination="dUi-7G-oTx" id="gVi-Cg-W0r"/>
+                        <segue destination="mIx-Bx-y8s" kind="popover" identifier="showAdminPageSegue" popoverAnchorView="qWX-a8-3cj" id="obi-Um-fw5">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="-1" y="56"/>
+        </scene>
+        <!--Admin Page View Controller-->
+        <scene sceneID="gjZ-vC-bra">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJA-ma-blQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mIx-Bx-y8s" customClass="AdminPageViewController" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7nz-N5-cvQ">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Admin Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BB9-ce-cck">
+                                <rect key="frame" x="176" y="10" width="276" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wqu-MG-82R">
+                                <rect key="frame" x="192" y="171" width="216" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AdminDismissClicked:" destination="mIx-Bx-y8s" eventType="touchUpInside" id="w9S-C7-LN4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1141" y="1031"/>
+        </scene>
+        <!--Temp Left Popup View Controller-->
+        <scene sceneID="TmF-5Q-Xak">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emv-wh-xji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="KbX-g1-qje" customClass="TempLeftPopupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r2Y-zn-Oyn">
+                        <rect key="frame" x="0.0" y="0.0" width="650" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="oks-OH-G9n">
+                                <rect key="frame" x="0.0" y="0.0" width="650" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="TempLeftImage" destination="oks-OH-G9n" id="TYX-lX-ujy"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1244" y="64"/>
+        </scene>
+        <!--Temp Right Popup View Controller-->
+        <scene sceneID="nCS-NH-rpa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pb-Wf-WgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="VbH-F1-jht" customClass="TempRightPopupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gyx-Qm-Bt4">
+                        <rect key="frame" x="0.0" y="0.0" width="650" height="200"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="B85-t4-yu0">
+                                <rect key="frame" x="0.0" y="0.0" width="650" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="TempRightImage" destination="B85-t4-yu0" id="Jm7-SB-XMd"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1244" y="594"/>
         </scene>
     </scenes>
     <resources>
@@ -244,8 +361,14 @@
         <image name="thermometer.jpg" width="108" height="386"/>
     </resources>
     <classes>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+        <class className="AdminPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AdminPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="AdminDismissClicked:"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backgroundClicked:"/>
                 <relationship kind="action" name="leftKegImageClicked:"/>
@@ -267,6 +390,18 @@
                 <relationship kind="outlet" name="rightKegPct" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightKegTemp" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightKegType" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TempLeftPopupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TempLeftPopupViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TempLeftImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TempRightPopupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TempRightPopupViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TempRightImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>

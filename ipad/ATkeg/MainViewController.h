@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SMWebRequest.h"
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 - (void)doKegDataRefresh;
 - (void)doLocalRefresh;
 

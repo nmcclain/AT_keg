@@ -14,7 +14,7 @@
 		811CE7BF14834A8800DAFE84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7BE14834A8800DAFE84 /* main.m */; };
 		811CE7C314834A8800DAFE84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7C214834A8800DAFE84 /* AppDelegate.m */; };
 		811CE7C614834A8800DAFE84 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */; };
-		811CE7C914834A8800DAFE84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7C814834A8800DAFE84 /* ViewController.m */; };
+		811CE7C914834A8800DAFE84 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE7C814834A8800DAFE84 /* MainViewController.m */; };
 		811CE7D114834A8900DAFE84 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE7D014834A8900DAFE84 /* SenTestingKit.framework */; };
 		811CE7D214834A8900DAFE84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE7B214834A8800DAFE84 /* UIKit.framework */; };
 		811CE7D314834A8900DAFE84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE7B414834A8800DAFE84 /* Foundation.framework */; };
@@ -43,6 +43,9 @@
 		81A7C92A15570EF900CCBA85 /* dalespaleale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92815570EF900CCBA85 /* dalespaleale.jpg */; };
 		81A7C92B15570EF900CCBA85 /* tbr-london-pride.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92915570EF900CCBA85 /* tbr-london-pride.jpg */; };
 		81A7C92D155710F400CCBA85 /* thermometer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92C155710F400CCBA85 /* thermometer.jpg */; };
+		81D1C6361569EC73002134DD /* TempLeftPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */; };
+		81D1C6391569ED29002134DD /* TempRightPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C6381569ED29002134DD /* TempRightPopupViewController.m */; };
+		81D1C63C1569F125002134DD /* AdminPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C63B1569F125002134DD /* AdminPageViewController.m */; };
 		81F42EE71557162A00A8ACC2 /* note_paper.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81F42EE61557162A00A8ACC2 /* note_paper.gif */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +71,8 @@
 		811CE7C114834A8800DAFE84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		811CE7C214834A8800DAFE84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		811CE7C514834A8800DAFE84 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		811CE7C714834A8800DAFE84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		811CE7C814834A8800DAFE84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		811CE7C714834A8800DAFE84 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		811CE7C814834A8800DAFE84 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		811CE7CF14834A8900DAFE84 /* ATkegTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATkegTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811CE7D014834A8900DAFE84 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		811CE7D814834A8900DAFE84 /* ATkegTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ATkegTests-Info.plist"; sourceTree = "<group>"; };
@@ -113,6 +116,12 @@
 		81A7C92815570EF900CCBA85 /* dalespaleale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dalespaleale.jpg; path = ../dalespaleale.jpg; sourceTree = "<group>"; };
 		81A7C92915570EF900CCBA85 /* tbr-london-pride.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tbr-london-pride.jpg"; path = "../tbr-london-pride.jpg"; sourceTree = "<group>"; };
 		81A7C92C155710F400CCBA85 /* thermometer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = thermometer.jpg; path = ../thermometer.jpg; sourceTree = "<group>"; };
+		81D1C6341569EC73002134DD /* TempLeftPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempLeftPopupViewController.h; sourceTree = "<group>"; };
+		81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempLeftPopupViewController.m; sourceTree = "<group>"; };
+		81D1C6371569ED29002134DD /* TempRightPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempRightPopupViewController.h; sourceTree = "<group>"; };
+		81D1C6381569ED29002134DD /* TempRightPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempRightPopupViewController.m; sourceTree = "<group>"; };
+		81D1C63A1569F125002134DD /* AdminPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AdminPageViewController.h; sourceTree = "<group>"; };
+		81D1C63B1569F125002134DD /* AdminPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminPageViewController.m; sourceTree = "<group>"; };
 		81F42EE61557162A00A8ACC2 /* note_paper.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = note_paper.gif; path = ../note_paper.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,8 +185,14 @@
 				811CE7C114834A8800DAFE84 /* AppDelegate.h */,
 				811CE7C214834A8800DAFE84 /* AppDelegate.m */,
 				811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */,
-				811CE7C714834A8800DAFE84 /* ViewController.h */,
-				811CE7C814834A8800DAFE84 /* ViewController.m */,
+				811CE7C714834A8800DAFE84 /* MainViewController.h */,
+				811CE7C814834A8800DAFE84 /* MainViewController.m */,
+				81D1C6341569EC73002134DD /* TempLeftPopupViewController.h */,
+				81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */,
+				81D1C6371569ED29002134DD /* TempRightPopupViewController.h */,
+				81D1C6381569ED29002134DD /* TempRightPopupViewController.m */,
+				81D1C63A1569F125002134DD /* AdminPageViewController.h */,
+				81D1C63B1569F125002134DD /* AdminPageViewController.m */,
 				816EC60815573FAF00802A32 /* SBJson */,
 				816EC62215573FAF00802A32 /* SMWebRequest */,
 				811CE7B914834A8800DAFE84 /* Supporting Files */,
@@ -394,7 +409,7 @@
 			files = (
 				811CE7BF14834A8800DAFE84 /* main.m in Sources */,
 				811CE7C314834A8800DAFE84 /* AppDelegate.m in Sources */,
-				811CE7C914834A8800DAFE84 /* ViewController.m in Sources */,
+				811CE7C914834A8800DAFE84 /* MainViewController.m in Sources */,
 				816EC62615573FAF00802A32 /* NSObject+SBJson.m in Sources */,
 				816EC62715573FAF00802A32 /* SBJsonParser.m in Sources */,
 				816EC62815573FAF00802A32 /* SBJsonStreamParser.m in Sources */,
@@ -408,6 +423,9 @@
 				816EC63015573FAF00802A32 /* SBJsonUTF8Stream.m in Sources */,
 				816EC63115573FAF00802A32 /* SBJsonWriter.m in Sources */,
 				816EC63315573FAF00802A32 /* SMWebRequest.m in Sources */,
+				81D1C6361569EC73002134DD /* TempLeftPopupViewController.m in Sources */,
+				81D1C6391569ED29002134DD /* TempRightPopupViewController.m in Sources */,
+				81D1C63C1569F125002134DD /* AdminPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

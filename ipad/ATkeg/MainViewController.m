@@ -6,11 +6,11 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "SMWebRequest.h"
 #import "SBJson.h"
 
-@implementation ViewController
+@implementation MainViewController
 @synthesize mainView;
 @synthesize navBar;
 
@@ -77,9 +77,9 @@ int const ScreenDimSeconds = 300;
     [oneFingerSwipeDown setDirection: UISwipeGestureRecognizerDirectionDown];
     [[self view] addGestureRecognizer:oneFingerSwipeDown];
     
-    UITapGestureRecognizer *adminSwipeGestureRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adminSwipeDetected)];
+    UITapGestureRecognizer *adminSwipeGestureRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(adminTapDetected:)];
     [adminSwipeGestureRecognizer setNumberOfTapsRequired:3];
-    [adminSwipeGestureRecognizer setNumberOfTouchesRequired:3];
+    [adminSwipeGestureRecognizer setNumberOfTouchesRequired:2];
     [[self view] addGestureRecognizer:adminSwipeGestureRecognizer];
 
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
@@ -94,10 +94,9 @@ int const ScreenDimSeconds = 300;
 {
     lasttouch = [NSDate date];
 }
-- (void)adminSwipeDetected:(UISwipeGestureRecognizer *)recognizer
+- (void)adminTapDetected:(UITapGestureRecognizer *)recognizer
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"JO!" message:@"JO....." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-    [alertView show];
+    [self performSegueWithIdentifier:@"showAdminPageSegue" sender:self];
 }
 
 -(void)refreshView:(NSNotification *) notification {
@@ -267,8 +266,10 @@ int const ScreenDimSeconds = 300;
 }
 
 - (IBAction)leftKegImageClicked:(id)sender {
+   /*
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"POW!" message:@"POW....." delegate:self cancelButtonTitle:@"INDEED!!" otherButtonTitles:nil];
     [alertView show];
+    */
 }
 - (IBAction)backgroundClicked:(id)sender {
     lasttouch = [NSDate date];
