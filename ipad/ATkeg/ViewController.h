@@ -20,7 +20,8 @@
 
 @property (nonatomic, retain) SMWebRequest *kegWebRequest;
 
-
+@property (nonatomic, retain) SMWebRequest *kegImageLeftWebRequest;
+@property (nonatomic, retain) SMWebRequest *kegImageRightWebRequest;
 
 @property (weak, nonatomic) IBOutlet UILabel *leftKegName;
 @property (weak, nonatomic) IBOutlet UILabel *leftKegType;
@@ -39,5 +40,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightKegDesc;
 @property (weak, nonatomic) IBOutlet UILabel *rightKegPct;
 @property (weak, nonatomic) IBOutlet UILabel *rightKegTemp;
+@property (weak, nonatomic) IBOutlet UIButton *rightKegImage;
 
 @end

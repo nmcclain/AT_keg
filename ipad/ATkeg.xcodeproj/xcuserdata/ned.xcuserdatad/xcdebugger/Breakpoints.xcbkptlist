@@ -9,13 +9,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ATkeg/ViewController.m"
-         timestampString = "358658282.54324"
+         timestampString = "359259775.675614"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
+         startingLineNumber = "162"
+         endingLineNumber = "162"
          landmarkName = "@implementation ViewController"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ATkeg/ViewController.m"
+         timestampString = "359260817.635126"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "244"
+         endingLineNumber = "244"
+         landmarkName = "-kegImageRightWebRequestComplete:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

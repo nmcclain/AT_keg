@@ -13,7 +13,11 @@
 @implementation ViewController
 @synthesize mainView;
 @synthesize navBar;
+
 @synthesize kegWebRequest;
+@synthesize kegImageLeftWebRequest;
+@synthesize kegImageRightWebRequest;
+
 @synthesize leftKegName;
 @synthesize leftKegType;
 @synthesize leftKegABV;
@@ -29,9 +33,10 @@
 @synthesize rightKegDesc;
 @synthesize rightKegPct;
 @synthesize rightKegTemp;
+@synthesize rightKegImage;
 
 NSDate *lasttouch;
-int const ScreenDimSeconds = 3; //00;
+int const ScreenDimSeconds = 300;
 
 - (void)didReceiveMemoryWarning
 {
@@ -124,6 +129,7 @@ int const ScreenDimSeconds = 3; //00;
     [self setMainView:nil];
     [self setLeftKegImage:nil];
     [self setLeftKegImage:nil];
+    [self setRightKegImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -202,8 +208,40 @@ int const ScreenDimSeconds = 3; //00;
     self.rightKegPct.text = [NSString stringWithFormat:@"%@%%", [[jsonResponse objectForKey:@"right"] objectForKey:@"pctremaining"]];
     self.leftKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"left"] objectForKey:@"tempF"]];
     self.rightKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"right"] objectForKey:@"tempF"]];
+    
+    self.kegImageLeftWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:[[jsonResponse objectForKey:@"left"] objectForKey:@"imageurl"]]];
+    [kegImageLeftWebRequest addTarget:self action:@selector(kegImageLeftWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
+    [kegImageLeftWebRequest start];
+    self.kegImageRightWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:[[jsonResponse objectForKey:@"right"] objectForKey:@"imageurl"]]];
+    [kegImageRightWebRequest addTarget:self action:@selector(kegImageRightWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
+    [kegImageRightWebRequest start];
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
     
+    return;
+}
+
+- (void)kegImageLeftWebRequestComplete:(NSData *)responseData {
+    if(!responseData )    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error fetching keg data." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertView show];
+        
+        self.navBar.topItem.title = @"Error fetching Keg Status";
+        return;
+    }
+    [self.leftKegImage setImage:[UIImage imageWithData:responseData] forState:UIControlStateNormal];
+    return;
+}
+
+- (void)kegImageRightWebRequestComplete:(NSData *)responseData {
+    if(!responseData )    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error fetching keg data." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertView show];
+        
+        self.navBar.topItem.title = @"Error fetching Keg Status";
+        return;
+    }
+    [self.rightKegImage setImage:[UIImage imageWithData:responseData] forState:UIControlStateNormal];
     return;
 }
 
