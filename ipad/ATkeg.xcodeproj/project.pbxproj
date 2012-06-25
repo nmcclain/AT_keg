@@ -24,6 +24,17 @@
 		81261A5D1493D0310025C443 /* beer_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A5C1493D0310025C443 /* beer_icon.png */; };
 		81261A631493D1BD0025C443 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */; };
 		81261A641493D1C30025C443 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 81261A611493D1100025C443 /* Default-Portrait~ipad.png */; };
+		816186FF1598CAE0001D36C6 /* AdminVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 816186FE1598CAE0001D36C6 /* AdminVC.m */; };
+		816BD6711598D50A008C15D4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6701598D50A008C15D4 /* logo.png */; };
+		816BD6751598E392008C15D4 /* orb_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6731598E392008C15D4 /* orb_blue.png */; };
+		816BD6761598E392008C15D4 /* orb_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6741598E392008C15D4 /* orb_red.png */; };
+		816BD67A1598EB6F008C15D4 /* orb_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6771598EB6F008C15D4 /* orb_green.png */; };
+		816BD67B1598EB6F008C15D4 /* orb_magenta.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6781598EB6F008C15D4 /* orb_magenta.png */; };
+		816BD67C1598EB6F008C15D4 /* orb_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 816BD6791598EB6F008C15D4 /* orb_yellow.png */; };
+		816BD6821598EC12008C15D4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 816BD67E1598EC12008C15D4 /* .gitignore */; };
+		816BD6831598EC12008C15D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 816BD67F1598EC12008C15D4 /* README.md */; };
+		816BD6841598EC12008C15D4 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 816BD6811598EC12008C15D4 /* UIView+Glow.m */; };
+		816BD6861599030F008C15D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 816BD6851599030F008C15D4 /* QuartzCore.framework */; };
 		816EC62615573FAF00802A32 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC60A15573FAF00802A32 /* NSObject+SBJson.m */; };
 		816EC62715573FAF00802A32 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC60D15573FAF00802A32 /* SBJsonParser.m */; };
 		816EC62815573FAF00802A32 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 816EC60F15573FAF00802A32 /* SBJsonStreamParser.m */; };
@@ -45,7 +56,6 @@
 		81A7C92D155710F400CCBA85 /* thermometer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81A7C92C155710F400CCBA85 /* thermometer.jpg */; };
 		81D1C6361569EC73002134DD /* TempLeftPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */; };
 		81D1C6391569ED29002134DD /* TempRightPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C6381569ED29002134DD /* TempRightPopupViewController.m */; };
-		81D1C63C1569F125002134DD /* AdminPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D1C63B1569F125002134DD /* AdminPageViewController.m */; };
 		81F42EE71557162A00A8ACC2 /* note_paper.gif in Resources */ = {isa = PBXBuildFile; fileRef = 81F42EE61557162A00A8ACC2 /* note_paper.gif */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +93,19 @@
 		81261A5C1493D0310025C443 /* beer_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_icon.png; path = ../beer_icon.png; sourceTree = "<group>"; };
 		81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		81261A611493D1100025C443 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		816186FD1598CAE0001D36C6 /* AdminVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminVC.h; sourceTree = "<group>"; };
+		816186FE1598CAE0001D36C6 /* AdminVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminVC.m; sourceTree = "<group>"; };
+		816BD6701598D50A008C15D4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = SOURCE_ROOT; };
+		816BD6731598E392008C15D4 /* orb_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orb_blue.png; sourceTree = SOURCE_ROOT; };
+		816BD6741598E392008C15D4 /* orb_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orb_red.png; sourceTree = SOURCE_ROOT; };
+		816BD6771598EB6F008C15D4 /* orb_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orb_green.png; sourceTree = SOURCE_ROOT; };
+		816BD6781598EB6F008C15D4 /* orb_magenta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orb_magenta.png; sourceTree = SOURCE_ROOT; };
+		816BD6791598EB6F008C15D4 /* orb_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orb_yellow.png; sourceTree = SOURCE_ROOT; };
+		816BD67E1598EC12008C15D4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		816BD67F1598EC12008C15D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		816BD6801598EC12008C15D4 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
+		816BD6811598EC12008C15D4 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
+		816BD6851599030F008C15D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		816EC60915573FAF00802A32 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		816EC60A15573FAF00802A32 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		816EC60B15573FAF00802A32 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -120,8 +143,6 @@
 		81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempLeftPopupViewController.m; sourceTree = "<group>"; };
 		81D1C6371569ED29002134DD /* TempRightPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempRightPopupViewController.h; sourceTree = "<group>"; };
 		81D1C6381569ED29002134DD /* TempRightPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempRightPopupViewController.m; sourceTree = "<group>"; };
-		81D1C63A1569F125002134DD /* AdminPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AdminPageViewController.h; sourceTree = "<group>"; };
-		81D1C63B1569F125002134DD /* AdminPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminPageViewController.m; sourceTree = "<group>"; };
 		81F42EE61557162A00A8ACC2 /* note_paper.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = note_paper.gif; path = ../note_paper.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816BD6861599030F008C15D4 /* QuartzCore.framework in Frameworks */,
 				811CE7B314834A8800DAFE84 /* UIKit.framework in Frameworks */,
 				811CE7B514834A8800DAFE84 /* Foundation.framework in Frameworks */,
 				811CE7B714834A8800DAFE84 /* CoreGraphics.framework in Frameworks */,
@@ -171,6 +193,7 @@
 		811CE7B114834A8800DAFE84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				816BD6851599030F008C15D4 /* QuartzCore.framework */,
 				811CE7B214834A8800DAFE84 /* UIKit.framework */,
 				811CE7B414834A8800DAFE84 /* Foundation.framework */,
 				811CE7B614834A8800DAFE84 /* CoreGraphics.framework */,
@@ -184,15 +207,15 @@
 			children = (
 				811CE7C114834A8800DAFE84 /* AppDelegate.h */,
 				811CE7C214834A8800DAFE84 /* AppDelegate.m */,
-				811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */,
 				811CE7C714834A8800DAFE84 /* MainViewController.h */,
 				811CE7C814834A8800DAFE84 /* MainViewController.m */,
 				81D1C6341569EC73002134DD /* TempLeftPopupViewController.h */,
 				81D1C6351569EC73002134DD /* TempLeftPopupViewController.m */,
 				81D1C6371569ED29002134DD /* TempRightPopupViewController.h */,
 				81D1C6381569ED29002134DD /* TempRightPopupViewController.m */,
-				81D1C63A1569F125002134DD /* AdminPageViewController.h */,
-				81D1C63B1569F125002134DD /* AdminPageViewController.m */,
+				816186FD1598CAE0001D36C6 /* AdminVC.h */,
+				816186FE1598CAE0001D36C6 /* AdminVC.m */,
+				816BD67D1598EC12008C15D4 /* UIView-Glow */,
 				816EC60815573FAF00802A32 /* SBJson */,
 				816EC62215573FAF00802A32 /* SMWebRequest */,
 				811CE7B914834A8800DAFE84 /* Supporting Files */,
@@ -204,6 +227,7 @@
 		811CE7B914834A8800DAFE84 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				811CE7C414834A8800DAFE84 /* MainStoryboard.storyboard */,
 				811CE7BA14834A8800DAFE84 /* ATkeg-Info.plist */,
 				811CE7BB14834A8800DAFE84 /* InfoPlist.strings */,
 				811CE7BE14834A8800DAFE84 /* main.m */,
@@ -231,10 +255,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		816BD67D1598EC12008C15D4 /* UIView-Glow */ = {
+			isa = PBXGroup;
+			children = (
+				816BD67E1598EC12008C15D4 /* .gitignore */,
+				816BD67F1598EC12008C15D4 /* README.md */,
+				816BD6801598EC12008C15D4 /* UIView+Glow.h */,
+				816BD6811598EC12008C15D4 /* UIView+Glow.m */,
+			);
+			path = "UIView-Glow";
+			sourceTree = "<group>";
+		};
 		816EC60615571D8700802A32 /* images */ = {
 			isa = PBXGroup;
 			children = (
 				81261A611493D1100025C443 /* Default-Portrait~ipad.png */,
+				816BD6731598E392008C15D4 /* orb_blue.png */,
+				816BD6741598E392008C15D4 /* orb_red.png */,
+				816BD6771598EB6F008C15D4 /* orb_green.png */,
+				816BD6781598EB6F008C15D4 /* orb_magenta.png */,
+				816BD6791598EB6F008C15D4 /* orb_yellow.png */,
+				816BD6701598D50A008C15D4 /* logo.png */,
 				81261A5F1493D10E0025C443 /* Default-Landscape~ipad.png */,
 				81A7C92115570D2600CCBA85 /* Local_Texture__Three_by_One_by_Beyond_Oddities.jpg */,
 				81261A5C1493D0310025C443 /* beer_icon.png */,
@@ -373,6 +414,14 @@
 				81A7C92D155710F400CCBA85 /* thermometer.jpg in Resources */,
 				81F42EE71557162A00A8ACC2 /* note_paper.gif in Resources */,
 				816EC63215573FAF00802A32 /* README.md in Resources */,
+				816BD6711598D50A008C15D4 /* logo.png in Resources */,
+				816BD6751598E392008C15D4 /* orb_blue.png in Resources */,
+				816BD6761598E392008C15D4 /* orb_red.png in Resources */,
+				816BD67A1598EB6F008C15D4 /* orb_green.png in Resources */,
+				816BD67B1598EB6F008C15D4 /* orb_magenta.png in Resources */,
+				816BD67C1598EB6F008C15D4 /* orb_yellow.png in Resources */,
+				816BD6821598EC12008C15D4 /* .gitignore in Resources */,
+				816BD6831598EC12008C15D4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +474,8 @@
 				816EC63315573FAF00802A32 /* SMWebRequest.m in Sources */,
 				81D1C6361569EC73002134DD /* TempLeftPopupViewController.m in Sources */,
 				81D1C6391569ED29002134DD /* TempRightPopupViewController.m in Sources */,
-				81D1C63C1569F125002134DD /* AdminPageViewController.m in Sources */,
+				816186FF1598CAE0001D36C6 /* AdminVC.m in Sources */,
+				816BD6841598EC12008C15D4 /* UIView+Glow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,5 +41,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightKegPct;
 @property (weak, nonatomic) IBOutlet UILabel *rightKegTemp;
 @property (weak, nonatomic) IBOutlet UIButton *rightKegImage;
+@property (weak, nonatomic) IBOutlet UIImageView *OrbImage;
 
 @end

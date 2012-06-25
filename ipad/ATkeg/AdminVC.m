@@ -1,18 +1,18 @@
 //
-//  AdminPageViewConroller.m
+//  AdminVC.m
 //  ATkeg
 //
-//  Created by Ned McClain on 5/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Ned on 6/25/12.
+//
 //
 
-#import "AdminPageViewController.h"
+#import "AdminVC.h"
 
-@implementation AdminPageViewController
+@implementation AdminVC
 
 - (void)didReceiveMemoryWarning
 {
-   // [super didReceiveMemoryWarning];
+    // [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -20,14 +20,14 @@
 
 - (void)viewDidLoad
 {
-   // [super viewDidLoad];
+    // [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void)viewDidUnload
 {
-   // [super viewDidUnload];
+    // [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -40,12 +40,12 @@
 }
 - (void)viewDidAppear:(BOOL)animated
 {
-  //  [super viewDidAppear:animated];
+    //  [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-//	[super viewWillDisappear:animated];
+    //	[super viewWillDisappear:animated];
     
 }
 
@@ -61,7 +61,5 @@
 }
 
 
-- (IBAction)AdminDismissClicked:(id)sender {
-    [self dismissPopoverAnimated:YES];
-}
+
 @end

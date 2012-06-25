@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SMWebRequest.h"
 #import "SBJson.h"
+#import "UIView+Glow.h"
 
 @implementation MainViewController
 @synthesize mainView;
@@ -34,9 +35,10 @@
 @synthesize rightKegPct;
 @synthesize rightKegTemp;
 @synthesize rightKegImage;
+@synthesize OrbImage;
 
 NSDate *lasttouch;
-int const ScreenDimSeconds = 300;
+int const ScreenDimSeconds = 7200;
 
 - (void)didReceiveMemoryWarning
 {
@@ -83,7 +85,6 @@ int const ScreenDimSeconds = 300;
     [[self view] addGestureRecognizer:adminSwipeGestureRecognizer];
 
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
     
 }
 - (void)tapDetected:(UITapGestureRecognizer *)recognizer
@@ -94,20 +95,15 @@ int const ScreenDimSeconds = 300;
 {
     lasttouch = [NSDate date];
 }
-- (void)adminTapDetected:(UITapGestureRecognizer *)recognizer
-{
-    [self performSegueWithIdentifier:@"showAdminPageSegue" sender:self];
+- (void)adminTapDetected:(UITapGestureRecognizer *)recognizer {
+    //NSLog(@"adminTapDetected");
+    [self performSegueWithIdentifier:@"segueToAdmin" sender:self];
 }
 
 -(void)refreshView:(NSNotification *) notification {
     [self doKegDataRefresh ];
     
 }
--(void)refreshLocalView:(NSNotification *) notification {
-    [self doLocalRefresh ];
-    
-}
-
 - (void)viewDidUnload
 {
     [self setNavBar:nil];
@@ -129,6 +125,7 @@ int const ScreenDimSeconds = 300;
     [self setLeftKegImage:nil];
     [self setLeftKegImage:nil];
     [self setRightKegImage:nil];
+    [self setOrbImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -166,15 +163,35 @@ int const ScreenDimSeconds = 300;
 }
 
 
+// Global error handler displays a simple failure message.
+- (void)webRequestError:(NSNotification *)notification {
+    static bool displayedOfflineAlert = NO;
+    static NSString *title = @"Request Error";
+    static NSString *message = @"You appear to be offline. Please try again later.";
+    
+    if (!displayedOfflineAlert) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertView show];
+        displayedOfflineAlert = YES;
+        
+    }
+    self.navBar.topItem.title = @"Network error... can't refresh keg data!";
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
+
+    
+}
+
+
 - (IBAction)refreshPushed:(id)sender {
     [self doKegDataRefresh ];
 }
 
 - (void)doKegDataRefresh
 {
+    NSLog(@"Starting keg data refresh");
 	// configurables
-    //NSString       *kegdataURL = @"http://bajafur.atrust.com/atkeg/atkeg_data.php";
-    NSString       *kegdataURL = @"http://www.camelspit.org/atkeg";
+    NSString       *kegdataURL = @"http://bajafur.atrust.com/atkeg/index.php";
+    //NSString       *kegdataURL = @"http://www.camelspit.org/atkeg";
     
     // NSLog(@"Refresh started...");
     //self.navBar.topItem.title = @"Loading...";
@@ -208,6 +225,41 @@ int const ScreenDimSeconds = 300;
     self.leftKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"left"] objectForKey:@"tempF"]];
     self.rightKegTemp.text = [NSString stringWithFormat:@"%@F", [[jsonResponse objectForKey:@"right"] objectForKey:@"tempF"]];
     
+    NSString *orbstr = [jsonResponse objectForKey:@"orb"];
+    
+    if ([orbstr isEqualToString:@"blue"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_blue.png"];
+        [self.OrbImage stopGlowing];
+    } else if ([orbstr isEqualToString:@"flashblue"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_blue.png"];
+        [self.OrbImage startGlowing];
+    } else if ([orbstr isEqualToString:@"red"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_red.png"];
+        [self.OrbImage stopGlowing];
+    } else if ([orbstr isEqualToString:@"magenta"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_magenta.png"];
+        [self.OrbImage stopGlowing];
+    } else if ([orbstr isEqualToString:@"flashmagenta"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_magenta.png"];
+        [self.OrbImage startGlowing];
+    } else if ([orbstr isEqualToString:@"yellow"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_yellow.png"];
+        [self.OrbImage stopGlowing];
+    } else if ([orbstr isEqualToString:@"green"]) {
+        self.OrbImage.hidden = false;
+        self.OrbImage.image = [UIImage imageNamed:@"orb_green.png"];
+        [self.OrbImage stopGlowing];
+    } else {
+        self.OrbImage.hidden = true;
+    }
+    
+    
     self.kegImageLeftWebRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:[[jsonResponse objectForKey:@"left"] objectForKey:@"imageurl"]]];
     [kegImageLeftWebRequest addTarget:self action:@selector(kegImageLeftWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
     [kegImageLeftWebRequest start];
@@ -215,7 +267,25 @@ int const ScreenDimSeconds = 300;
     [kegImageRightWebRequest addTarget:self action:@selector(kegImageRightWebRequestComplete:) forRequestEvents:SMWebRequestEventComplete];
     [kegImageRightWebRequest start];
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
+    
+    NSDate *now = [NSDate date];
+    NSTimeInterval theinterval = [now timeIntervalSinceDate:lasttouch];
+    if ((theinterval >= ScreenDimSeconds) && ([UIScreen mainScreen].brightness == 1)){
+        [UIScreen mainScreen].brightness = 0.1;
+        NSLog(@"dimmed the screen!");
+    } else if ((theinterval < ScreenDimSeconds) && ([UIScreen mainScreen].brightness < 1)){
+        [UIScreen mainScreen].brightness = 1;
+        NSLog(@"Undimmed the screen!");
+    }
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy"];
+    
+    self.navBar.topItem.title = [NSString stringWithFormat:@"On Tap @ AppliedTrust - %@", [dateFormatter stringFromDate:now] ];
+    
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(refreshView:) userInfo:nil repeats:NO];
+    
+
     
     return;
 }
@@ -241,27 +311,6 @@ int const ScreenDimSeconds = 300;
         return;
     }
     [self.rightKegImage setImage:[UIImage imageWithData:responseData] forState:UIControlStateNormal];
-    return;
-}
-
-- (void)doLocalRefresh
-{
-    
-	NSDate *now = [NSDate date];
-    NSTimeInterval theinterval = [now timeIntervalSinceDate:lasttouch];
-    if ((theinterval >= ScreenDimSeconds) && ([UIScreen mainScreen].brightness == 1)){
-        [UIScreen mainScreen].brightness = 0.1;
-        //NSLog(@"dimmed the screen!");
-    } else if ((theinterval < ScreenDimSeconds) && ([UIScreen mainScreen].brightness < 1)){
-        [UIScreen mainScreen].brightness = 1;
-        //NSLog(@"UNdimmed the screen!");
-    }
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateFormat:@"EEEE, MMM dd, yyyy"];
-    
-    self.navBar.topItem.title = [NSString stringWithFormat:@"On Tap @ AppliedTrust - %@", [dateFormatter stringFromDate:now] ];
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refreshLocalView:) userInfo:nil repeats:NO];
-    
     return;
 }
 
