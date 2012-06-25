@@ -38,6 +38,7 @@ function fetch_wikidata() {
   list($k1brewer,$k2brewer) = findvals($lines, "Brewer");
   list($k1abv,$k2abv) = findvals($lines, "ABV");
   list($k1type,$k2type) = findvals($lines, "Type");
+  list($k1img,$k2img) = findvals($lines, "Image Link");
 
   $out['left'] = array(
     'name' => $k1name,
@@ -45,6 +46,7 @@ function fetch_wikidata() {
     'description' => $k1desc,
     'abv' => $k1abv,
     'type' => $k1type,
+    'imageurl' => $k1img,
   );
   $out['right'] = array(
     'name' => $k2name,
@@ -52,6 +54,7 @@ function fetch_wikidata() {
     'description' => $k2desc,
     'abv' => $k2abv,
     'type' => $k2type,
+    'imageurl' => $k2img,
   );
   return $out;
 }
