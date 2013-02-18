@@ -8,6 +8,7 @@ if (isset($a['error'])) { die('error parsing arduino data'); }
 $d = array();
 $d['left'] = array_merge($w['left'], $a['left']);
 $d['right'] = array_merge($w['right'], $a['right']);
+$d['orb'] = fetch_orbdata();
 
 echo(json_encode($d))."\n";
 
@@ -21,6 +22,39 @@ function findvals($arr, $str) {
     }
   }
   return array(null, null);
+}
+#####################
+function fetch_orbdata() {
+
+# define ('ORB_FLASHBLUE', 0);
+# define ('ORB_BLUE', 1);
+# define ('ORB_FLASHMAGENTA', 2);
+# define ('ORB_MAGENTA', 3);
+# define ('ORB_RED', 4);
+# define ('ORB_YELLOW', 5);
+# define ('ORB_GREEN', 6);
+
+  $url = "http://atrek.atrust.com/orb/orbstate.xml";
+  $content = `wget -q -O - $url `;
+  $out = 'unknown';
+  if (preg_match('/<glowtype>(\d)<\/glowtype>/', $content, $matches)) {
+    if ($matches[1] == 0) {
+      $out = 'flashblue';
+    } else if ($matches[1] == 1) {
+      $out = 'blue';
+    } else if ($matches[1] == 2) {
+      $out = 'flashmagenta';
+    } else if ($matches[1] == 3) {
+      $out = 'magenta';
+    } else if ($matches[1] == 4) {
+      $out = 'red';
+    } else if ($matches[1] == 5) {
+      $out = 'yellow';
+    } else if ($matches[1] == 6) {
+      $out = 'green';
+    }
+  }
+  return $out;
 }
 
 #####################
@@ -134,7 +168,7 @@ function fetch_wikidata_old() {
 #####################
 function fetch_arduinodata() {
 
-  $url = "http://bull.atrust.com/kegbot/check.php";
+  $url = "http://192.168.1.36/check.php";
   $content = `wget -q -O - $url`;
   $out = array();
 
